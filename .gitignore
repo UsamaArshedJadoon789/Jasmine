@@ -1,0 +1,15 @@
+# Large datasets
+data/graph/*.txt
+data/edgar_small/*.csv
+data/edgar_large/*.csv
+
+# Compressed files
+*.gz
+*.zip
+*.tar
+*.rar
+
+# Platform-specific
+.DS_Store
+.idea/
+*.iml
