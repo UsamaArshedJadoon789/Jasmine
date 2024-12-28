@@ -1,0 +1,2 @@
+Found 1 items
+drwxr-xr-x   - ubuntu supergroup          0 2024-12-28 20:23 /user
