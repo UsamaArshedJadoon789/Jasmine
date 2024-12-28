@@ -1,0 +1,58 @@
+Individual Service Setup
+=====================
+1. HDFS Setup:
+HDFS Status:
+88416 TaskManagerRunner
+73120 DataNode
+51383 NameNode
+100633 Jps
+74057 Master
+61913 QuorumPeerMain
+97723 TaskManagerRunner
+73290 SecondaryNameNode
+63643 StandaloneSessionClusterEntrypoint
+87277 Kafka
+63934 TaskManagerRunner
+Configured Capacity: 134145380352 (124.93 GB)
+Present Capacity: 113274642432 (105.50 GB)
+DFS Remaining: 113274597376 (105.50 GB)
+DFS Used: 45056 (44 KB)
+DFS Used%: 0.00%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 127.0.0.1:9866 (localhost)
+Hostname: devin-box
+Decommission Status : Normal
+Configured Capacity: 134145380352 (124.93 GB)
+DFS Used: 45056 (44 KB)
+Non DFS Used: 13982015488 (13.02 GB)
+DFS Remaining: 113274597376 (105.50 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 84.44%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Sat Dec 28 21:29:37 UTC 2024
+Last Block Report: Sat Dec 28 21:21:12 UTC 2024
+Num of Blocks: 1
+
+
+2. Creating Test Directory:

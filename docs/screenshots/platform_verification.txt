@@ -1,0 +1,41 @@
+Starting Flink and Verifying All Platforms
+====================================
+1. Starting Flink cluster:
+Starting cluster.
+[INFO] 1 instance(s) of standalonesession are already running on devin-box.
+Starting standalonesession daemon on host devin-box.
+[INFO] 8 instance(s) of taskexecutor are already running on devin-box.
+Starting taskexecutor daemon on host devin-box.
+\n2. Verifying all running processes:
+88416 TaskManagerRunner
+137799 TaskManagerRunner
+74057 Master
+135531 TaskManagerRunner
+107500 TaskManagerRunner
+112721 NameNode
+129397 TaskManagerRunner
+113111 SecondaryNameNode
+124150 Kafka
+61913 QuorumPeerMain
+133400 TaskManagerRunner
+97723 TaskManagerRunner
+125146 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+137884 Jps
+63934 TaskManagerRunner
+\n3. Platform versions:
+Java version:
+openjdk version "11.0.25" 2024-10-15
+OpenJDK Runtime Environment (build 11.0.25+9-post-Ubuntu-1ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.25+9-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+\nFlink version:
+Version: 1.18.1, Commit ID: a8c8b1c
+\nKafka version:
+3.5.1
+\n4. Testing Flink cluster status:
+Waiting for response...
+No running jobs.
+No scheduled jobs.
+\n5. Verifying Kafka topics:
+test
+test-topic

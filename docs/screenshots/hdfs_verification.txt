@@ -1,0 +1,309 @@
+Verifying HDFS Status
+===================
+1. Java Processes:
+96337 Jps
+88416 TaskManagerRunner
+73120 DataNode
+51383 NameNode
+74057 Master
+61913 QuorumPeerMain
+73290 SecondaryNameNode
+63643 StandaloneSessionClusterEntrypoint
+87277 Kafka
+63934 TaskManagerRunner
+2. HDFS Report:
+2024-12-28 21:27:38,081 DEBUG util.Shell: setsid exited with exit code 0
+2024-12-28 21:27:38,231 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"GetGroups"})
+2024-12-28 21:27:38,238 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Rate of failed kerberos logins and latency (milliseconds)"})
+2024-12-28 21:27:38,238 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Rate of successful kerberos logins and latency (milliseconds)"})
+2024-12-28 21:27:38,238 DEBUG lib.MutableMetricsFactory: field private org.apache.hadoop.metrics2.lib.MutableGaugeInt org.apache.hadoop.security.UserGroupInformation$UgiMetrics.renewalFailures with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Renewal failures since last successful login"})
+2024-12-28 21:27:38,238 DEBUG lib.MutableMetricsFactory: field private org.apache.hadoop.metrics2.lib.MutableGaugeLong org.apache.hadoop.security.UserGroupInformation$UgiMetrics.renewalFailuresTotal with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Renewal failures since startup"})
+2024-12-28 21:27:38,240 DEBUG impl.MetricsSystemImpl: UgiMetrics, User and group related metrics
+2024-12-28 21:27:38,259 DEBUG security.SecurityUtil: Setting hadoop.security.token.service.use_ip to true
+2024-12-28 21:27:38,308 DEBUG security.Groups:  Creating new Groups object
+2024-12-28 21:27:38,309 DEBUG util.NativeCodeLoader: Trying to load the custom-built native-hadoop library...
+2024-12-28 21:27:38,311 DEBUG util.NativeCodeLoader: Loaded the native-hadoop library
+2024-12-28 21:27:38,311 DEBUG security.JniBasedUnixGroupsMapping: Using JniBasedUnixGroupsMapping for Group resolution
+2024-12-28 21:27:38,311 DEBUG security.JniBasedUnixGroupsMappingWithFallback: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMapping
+2024-12-28 21:27:38,329 DEBUG security.Groups: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+2024-12-28 21:27:38,393 DEBUG security.UserGroupInformation: Hadoop login
+2024-12-28 21:27:38,393 DEBUG security.UserGroupInformation: hadoop login commit
+2024-12-28 21:27:38,396 DEBUG security.UserGroupInformation: Using local user: UnixPrincipal: ubuntu
+2024-12-28 21:27:38,396 DEBUG security.UserGroupInformation: Using user: "UnixPrincipal: ubuntu" with name: ubuntu
+2024-12-28 21:27:38,396 DEBUG security.UserGroupInformation: User entry: "ubuntu"
+2024-12-28 21:27:38,396 DEBUG security.UserGroupInformation: UGI loginUser: ubuntu (auth:SIMPLE)
+2024-12-28 21:27:38,397 DEBUG fs.FileSystem: Starting: Acquiring creator semaphore for hdfs://localhost:9000
+2024-12-28 21:27:38,398 DEBUG fs.FileSystem: Acquiring creator semaphore for hdfs://localhost:9000: duration 0:00.000s
+2024-12-28 21:27:38,399 DEBUG fs.FileSystem: Starting: Creating FS hdfs://localhost:9000
+2024-12-28 21:27:38,399 DEBUG fs.FileSystem: Loading filesystems
+2024-12-28 21:27:38,412 DEBUG fs.FileSystem: file:// = class org.apache.hadoop.fs.LocalFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:38,422 DEBUG fs.FileSystem: viewfs:// = class org.apache.hadoop.fs.viewfs.ViewFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:38,425 DEBUG fs.FileSystem: har:// = class org.apache.hadoop.fs.HarFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:38,427 DEBUG fs.FileSystem: http:// = class org.apache.hadoop.fs.http.HttpFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:38,428 DEBUG fs.FileSystem: https:// = class org.apache.hadoop.fs.http.HttpsFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:38,433 DEBUG fs.FileSystem: hdfs:// = class org.apache.hadoop.hdfs.DistributedFileSystem from /opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.3.6.jar
+2024-12-28 21:27:38,441 DEBUG fs.FileSystem: webhdfs:// = class org.apache.hadoop.hdfs.web.WebHdfsFileSystem from /opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.3.6.jar
+2024-12-28 21:27:38,442 DEBUG fs.FileSystem: swebhdfs:// = class org.apache.hadoop.hdfs.web.SWebHdfsFileSystem from /opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.3.6.jar
+2024-12-28 21:27:38,442 DEBUG fs.FileSystem: Looking for FS supporting hdfs
+2024-12-28 21:27:38,442 DEBUG fs.FileSystem: looking for configuration option fs.hdfs.impl
+2024-12-28 21:27:38,442 DEBUG fs.FileSystem: Looking in service filesystems for implementation class
+2024-12-28 21:27:38,442 DEBUG fs.FileSystem: FS for hdfs is class org.apache.hadoop.hdfs.DistributedFileSystem
+2024-12-28 21:27:38,467 DEBUG impl.DfsClientConf: dfs.client.use.legacy.blockreader.local = false
+2024-12-28 21:27:38,467 DEBUG impl.DfsClientConf: dfs.client.read.shortcircuit = false
+2024-12-28 21:27:38,467 DEBUG impl.DfsClientConf: dfs.client.domain.socket.data.traffic = false
+2024-12-28 21:27:38,467 DEBUG impl.DfsClientConf: dfs.domain.socket.path = 
+2024-12-28 21:27:38,477 DEBUG hdfs.DFSClient: Sets dfs.client.block.write.replace-datanode-on-failure.min-replication to 0
+2024-12-28 21:27:38,487 DEBUG retry.RetryUtils: multipleLinearRandomRetry = null
+2024-12-28 21:27:38,505 DEBUG ipc.Server: rpcKind=RPC_PROTOCOL_BUFFER, rpcRequestWrapperClass=class org.apache.hadoop.ipc.ProtobufRpcEngine2$RpcProtobufRequest, rpcInvoker=org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker@1a4927d6
+2024-12-28 21:27:38,508 DEBUG ipc.Client: getting client out of cache: Client-931517f5b8e14da5b67eb6dbba8195ec
+2024-12-28 21:27:38,866 DEBUG unix.DomainSocketWatcher: org.apache.hadoop.net.unix.DomainSocketWatcher$2@72764445: starting with interruptCheckPeriodMs = 60000
+2024-12-28 21:27:38,912 DEBUG util.PerformanceAdvisory: Both short-circuit local reads and UNIX domain socket are disabled.
+2024-12-28 21:27:38,918 DEBUG sasl.DataTransferSaslUtil: DataTransferProtocol not using SaslPropertiesResolver, no QOP found in configuration for dfs.data.transfer.protection
+2024-12-28 21:27:38,922 DEBUG fs.FileSystem: Creating FS hdfs://localhost:9000: duration 0:00.522s
+2024-12-28 21:27:38,965 DEBUG ipc.Client: The ping interval is 60000 ms.
+2024-12-28 21:27:38,967 DEBUG ipc.Client: Connecting to localhost/127.0.0.1:9000
+2024-12-28 21:27:38,967 DEBUG ipc.Client: Setup connection to localhost/127.0.0.1:9000
+2024-12-28 21:27:38,995 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu: starting, having connections 1
+2024-12-28 21:27:38,998 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #0 org.apache.hadoop.hdfs.protocol.ClientProtocol.getFsStats
+2024-12-28 21:27:39,017 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #0
+2024-12-28 21:27:39,018 DEBUG ipc.ProtobufRpcEngine2: Call: getFsStats took 89ms
+2024-12-28 21:27:39,039 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #1 org.apache.hadoop.hdfs.protocol.ClientProtocol.getFsStats
+2024-12-28 21:27:39,044 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #1
+2024-12-28 21:27:39,044 DEBUG ipc.ProtobufRpcEngine2: Call: getFsStats took 8ms
+2024-12-28 21:27:39,071 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #2 org.apache.hadoop.hdfs.protocol.ClientProtocol.setSafeMode
+2024-12-28 21:27:39,078 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #2
+2024-12-28 21:27:39,078 DEBUG ipc.ProtobufRpcEngine2: Call: setSafeMode took 10ms
+Configured Capacity: 134145380352 (124.93 GB)
+Present Capacity: 113918623744 (106.09 GB)
+DFS Remaining: 113918578688 (106.09 GB)
+DFS Used: 45056 (44 KB)
+DFS Used%: 0.00%
+2024-12-28 21:27:39,082 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #3 org.apache.hadoop.hdfs.protocol.ClientProtocol.getFsReplicatedBlockStats
+2024-12-28 21:27:39,083 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #3
+2024-12-28 21:27:39,084 DEBUG ipc.ProtobufRpcEngine2: Call: getFsReplicatedBlockStats took 2ms
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+2024-12-28 21:27:39,086 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #4 org.apache.hadoop.hdfs.protocol.ClientProtocol.getFsECBlockGroupStats
+2024-12-28 21:27:39,087 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #4
+2024-12-28 21:27:39,087 DEBUG ipc.ProtobufRpcEngine2: Call: getFsECBlockGroupStats took 2ms
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+2024-12-28 21:27:39,090 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #5 org.apache.hadoop.hdfs.protocol.ClientProtocol.getDatanodeReport
+2024-12-28 21:27:39,096 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #5
+2024-12-28 21:27:39,096 DEBUG ipc.ProtobufRpcEngine2: Call: getDatanodeReport took 6ms
+Live datanodes (1):
+
+Name: 127.0.0.1:9866 (localhost)
+Hostname: devin-box
+Decommission Status : Normal
+Configured Capacity: 134145380352 (124.93 GB)
+DFS Used: 45056 (44 KB)
+Non DFS Used: 13338034176 (12.42 GB)
+DFS Remaining: 113918578688 (106.09 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 84.92%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Sat Dec 28 21:27:36 UTC 2024
+Last Block Report: Sat Dec 28 21:21:12 UTC 2024
+Num of Blocks: 1
+
+
+2024-12-28 21:27:39,112 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #6 org.apache.hadoop.hdfs.protocol.ClientProtocol.getDatanodeReport
+2024-12-28 21:27:39,113 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #6
+2024-12-28 21:27:39,113 DEBUG ipc.ProtobufRpcEngine2: Call: getDatanodeReport took 1ms
+2024-12-28 21:27:39,114 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #7 org.apache.hadoop.hdfs.protocol.ClientProtocol.getDatanodeReport
+2024-12-28 21:27:39,116 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #7
+2024-12-28 21:27:39,116 DEBUG ipc.ProtobufRpcEngine2: Call: getDatanodeReport took 3ms
+2024-12-28 21:27:39,117 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #8 org.apache.hadoop.hdfs.protocol.ClientProtocol.getDatanodeReport
+2024-12-28 21:27:39,119 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #8
+2024-12-28 21:27:39,119 DEBUG ipc.ProtobufRpcEngine2: Call: getDatanodeReport took 3ms
+2024-12-28 21:27:39,120 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #9 org.apache.hadoop.hdfs.protocol.ClientProtocol.getDatanodeReport
+2024-12-28 21:27:39,123 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #9
+2024-12-28 21:27:39,126 DEBUG ipc.ProtobufRpcEngine2: Call: getDatanodeReport took 7ms
+2024-12-28 21:27:39,127 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu sending #10 org.apache.hadoop.hdfs.protocol.ClientProtocol.getSlowDatanodeReport
+2024-12-28 21:27:39,132 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu got value #10
+2024-12-28 21:27:39,133 DEBUG ipc.ProtobufRpcEngine2: Call: getSlowDatanodeReport took 6ms
+2024-12-28 21:27:39,138 DEBUG fs.FileSystem: FileSystem.close() by method: org.apache.hadoop.hdfs.DistributedFileSystem.close(DistributedFileSystem.java:1531)); Key: (ubuntu (auth:SIMPLE))@hdfs://localhost:9000; URI: hdfs://localhost:9000; Object Identity Hash: 77c75b74
+2024-12-28 21:27:39,140 DEBUG ipc.Client: stopping client from cache: Client-931517f5b8e14da5b67eb6dbba8195ec
+2024-12-28 21:27:39,140 DEBUG ipc.Client: removing client from cache: Client-931517f5b8e14da5b67eb6dbba8195ec
+2024-12-28 21:27:39,141 DEBUG ipc.Client: stopping actual client because no more references remain: Client-931517f5b8e14da5b67eb6dbba8195ec
+2024-12-28 21:27:39,141 DEBUG ipc.Client: Stopping client
+2024-12-28 21:27:39,143 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu: closed
+2024-12-28 21:27:39,143 DEBUG ipc.Client: IPC Client (892555958) connection to localhost/127.0.0.1:9000 from ubuntu: stopped, remaining connections 0
+2024-12-28 21:27:39,144 DEBUG hdfs.KeyProviderCache: Invalidating all cached KeyProviders.
+2024-12-28 21:27:39,144 DEBUG util.ShutdownHookManager: Completed shutdown in 0.009 seconds; Timeouts: 0
+2024-12-28 21:27:39,172 DEBUG util.ShutdownHookManager: ShutdownHookManager completed shutdown.
+3. Test HDFS Operations:
+2024-12-28 21:27:40,235 DEBUG util.Shell: setsid exited with exit code 0
+2024-12-28 21:27:40,238 DEBUG conf.Configuration: parsing URL jar:file:/opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar!/core-default.xml
+2024-12-28 21:27:40,239 DEBUG conf.Configuration: parsing input stream sun.net.www.protocol.jar.JarURLConnection$JarURLInputStream@646be2c3
+2024-12-28 21:27:40,301 DEBUG conf.Configuration: parsing URL file:/opt/hadoop/etc/hadoop/core-site.xml
+2024-12-28 21:27:40,301 DEBUG conf.Configuration: parsing input stream java.io.BufferedInputStream@75f32542
+2024-12-28 21:27:40,352 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"GetGroups"})
+2024-12-28 21:27:40,358 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Rate of failed kerberos logins and latency (milliseconds)"})
+2024-12-28 21:27:40,359 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Rate of successful kerberos logins and latency (milliseconds)"})
+2024-12-28 21:27:40,359 DEBUG lib.MutableMetricsFactory: field private org.apache.hadoop.metrics2.lib.MutableGaugeInt org.apache.hadoop.security.UserGroupInformation$UgiMetrics.renewalFailures with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Renewal failures since last successful login"})
+2024-12-28 21:27:40,359 DEBUG lib.MutableMetricsFactory: field private org.apache.hadoop.metrics2.lib.MutableGaugeLong org.apache.hadoop.security.UserGroupInformation$UgiMetrics.renewalFailuresTotal with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Renewal failures since startup"})
+2024-12-28 21:27:40,361 DEBUG impl.MetricsSystemImpl: UgiMetrics, User and group related metrics
+2024-12-28 21:27:40,376 DEBUG security.SecurityUtil: Setting hadoop.security.token.service.use_ip to true
+2024-12-28 21:27:40,426 DEBUG security.Groups:  Creating new Groups object
+2024-12-28 21:27:40,427 DEBUG util.NativeCodeLoader: Trying to load the custom-built native-hadoop library...
+2024-12-28 21:27:40,428 DEBUG util.NativeCodeLoader: Loaded the native-hadoop library
+2024-12-28 21:27:40,429 DEBUG security.JniBasedUnixGroupsMapping: Using JniBasedUnixGroupsMapping for Group resolution
+2024-12-28 21:27:40,429 DEBUG security.JniBasedUnixGroupsMappingWithFallback: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMapping
+2024-12-28 21:27:40,449 DEBUG security.Groups: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+2024-12-28 21:27:40,533 DEBUG security.UserGroupInformation: Hadoop login
+2024-12-28 21:27:40,533 DEBUG security.UserGroupInformation: hadoop login commit
+2024-12-28 21:27:40,535 DEBUG security.UserGroupInformation: Using local user: UnixPrincipal: ubuntu
+2024-12-28 21:27:40,535 DEBUG security.UserGroupInformation: Using user: "UnixPrincipal: ubuntu" with name: ubuntu
+2024-12-28 21:27:40,536 DEBUG security.UserGroupInformation: User entry: "ubuntu"
+2024-12-28 21:27:40,536 DEBUG security.UserGroupInformation: UGI loginUser: ubuntu (auth:SIMPLE)
+2024-12-28 21:27:40,537 DEBUG fs.FileSystem: Starting: Acquiring creator semaphore for hdfs://localhost:9000
+2024-12-28 21:27:40,537 DEBUG fs.FileSystem: Acquiring creator semaphore for hdfs://localhost:9000: duration 0:00.001s
+2024-12-28 21:27:40,537 DEBUG fs.FileSystem: Starting: Creating FS hdfs://localhost:9000
+2024-12-28 21:27:40,537 DEBUG fs.FileSystem: Loading filesystems
+2024-12-28 21:27:40,546 DEBUG fs.FileSystem: file:// = class org.apache.hadoop.fs.LocalFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:40,550 DEBUG fs.FileSystem: viewfs:// = class org.apache.hadoop.fs.viewfs.ViewFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:40,551 DEBUG fs.FileSystem: har:// = class org.apache.hadoop.fs.HarFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:40,553 DEBUG fs.FileSystem: http:// = class org.apache.hadoop.fs.http.HttpFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:40,554 DEBUG fs.FileSystem: https:// = class org.apache.hadoop.fs.http.HttpsFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:40,561 DEBUG fs.FileSystem: hdfs:// = class org.apache.hadoop.hdfs.DistributedFileSystem from /opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.3.6.jar
+2024-12-28 21:27:40,570 DEBUG fs.FileSystem: webhdfs:// = class org.apache.hadoop.hdfs.web.WebHdfsFileSystem from /opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.3.6.jar
+2024-12-28 21:27:40,571 DEBUG fs.FileSystem: swebhdfs:// = class org.apache.hadoop.hdfs.web.SWebHdfsFileSystem from /opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.3.6.jar
+2024-12-28 21:27:40,571 DEBUG fs.FileSystem: Looking for FS supporting hdfs
+2024-12-28 21:27:40,571 DEBUG fs.FileSystem: looking for configuration option fs.hdfs.impl
+2024-12-28 21:27:40,593 DEBUG fs.FileSystem: Looking in service filesystems for implementation class
+2024-12-28 21:27:40,593 DEBUG fs.FileSystem: FS for hdfs is class org.apache.hadoop.hdfs.DistributedFileSystem
+2024-12-28 21:27:40,617 DEBUG impl.DfsClientConf: dfs.client.use.legacy.blockreader.local = false
+2024-12-28 21:27:40,617 DEBUG impl.DfsClientConf: dfs.client.read.shortcircuit = false
+2024-12-28 21:27:40,617 DEBUG impl.DfsClientConf: dfs.client.domain.socket.data.traffic = false
+2024-12-28 21:27:40,617 DEBUG impl.DfsClientConf: dfs.domain.socket.path = 
+2024-12-28 21:27:40,625 DEBUG hdfs.DFSClient: Sets dfs.client.block.write.replace-datanode-on-failure.min-replication to 0
+2024-12-28 21:27:40,637 DEBUG retry.RetryUtils: multipleLinearRandomRetry = null
+2024-12-28 21:27:40,648 DEBUG ipc.Server: rpcKind=RPC_PROTOCOL_BUFFER, rpcRequestWrapperClass=class org.apache.hadoop.ipc.ProtobufRpcEngine2$RpcProtobufRequest, rpcInvoker=org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker@a8ef162
+2024-12-28 21:27:40,651 DEBUG ipc.Client: getting client out of cache: Client-79331aec14964576a022aa8f7a8ef997
+2024-12-28 21:27:41,032 DEBUG unix.DomainSocketWatcher: org.apache.hadoop.net.unix.DomainSocketWatcher$2@49e0e656: starting with interruptCheckPeriodMs = 60000
+2024-12-28 21:27:41,070 DEBUG util.PerformanceAdvisory: Both short-circuit local reads and UNIX domain socket are disabled.
+2024-12-28 21:27:41,079 DEBUG sasl.DataTransferSaslUtil: DataTransferProtocol not using SaslPropertiesResolver, no QOP found in configuration for dfs.data.transfer.protection
+2024-12-28 21:27:41,082 DEBUG fs.FileSystem: Creating FS hdfs://localhost:9000: duration 0:00.545s
+2024-12-28 21:27:41,083 DEBUG fs.Globber: Created Globber for path=/test, symlinks=true
+2024-12-28 21:27:41,084 DEBUG fs.Globber: Starting: glob /test
+2024-12-28 21:27:41,084 DEBUG fs.Globber: Filesystem glob /test
+2024-12-28 21:27:41,084 DEBUG fs.Globber: Pattern: /test
+2024-12-28 21:27:41,098 DEBUG fs.Globber: Component test, patterned=false
+2024-12-28 21:27:41,136 DEBUG ipc.Client: The ping interval is 60000 ms.
+2024-12-28 21:27:41,137 DEBUG ipc.Client: Connecting to localhost/127.0.0.1:9000
+2024-12-28 21:27:41,137 DEBUG ipc.Client: Setup connection to localhost/127.0.0.1:9000
+2024-12-28 21:27:41,157 DEBUG ipc.Client: IPC Client (370475881) connection to localhost/127.0.0.1:9000 from ubuntu: starting, having connections 1
+2024-12-28 21:27:41,160 DEBUG ipc.Client: IPC Client (370475881) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (370475881) connection to localhost/127.0.0.1:9000 from ubuntu sending #0 org.apache.hadoop.hdfs.protocol.ClientProtocol.getFileInfo
+2024-12-28 21:27:41,170 DEBUG ipc.Client: IPC Client (370475881) connection to localhost/127.0.0.1:9000 from ubuntu got value #0
+2024-12-28 21:27:41,170 DEBUG ipc.ProtobufRpcEngine2: Call: getFileInfo took 65ms
+2024-12-28 21:27:41,193 DEBUG fs.Globber: glob /test: duration 0:00.110s
+2024-12-28 21:27:41,197 DEBUG fs.FileSystem: FileSystem.close() by method: org.apache.hadoop.hdfs.DistributedFileSystem.close(DistributedFileSystem.java:1531)); Key: (ubuntu (auth:SIMPLE))@hdfs://localhost:9000; URI: hdfs://localhost:9000; Object Identity Hash: 3dc0a152
+2024-12-28 21:27:41,199 DEBUG ipc.Client: stopping client from cache: Client-79331aec14964576a022aa8f7a8ef997
+2024-12-28 21:27:41,200 DEBUG ipc.Client: removing client from cache: Client-79331aec14964576a022aa8f7a8ef997
+2024-12-28 21:27:41,201 DEBUG ipc.Client: stopping actual client because no more references remain: Client-79331aec14964576a022aa8f7a8ef997
+2024-12-28 21:27:41,201 DEBUG ipc.Client: Stopping client
+2024-12-28 21:27:41,202 DEBUG ipc.Client: IPC Client (370475881) connection to localhost/127.0.0.1:9000 from ubuntu: closed
+2024-12-28 21:27:41,202 DEBUG ipc.Client: IPC Client (370475881) connection to localhost/127.0.0.1:9000 from ubuntu: stopped, remaining connections 0
+2024-12-28 21:27:41,208 DEBUG hdfs.KeyProviderCache: Invalidating all cached KeyProviders.
+2024-12-28 21:27:41,208 DEBUG util.ShutdownHookManager: Completed shutdown in 0.013 seconds; Timeouts: 0
+2024-12-28 21:27:41,229 DEBUG util.ShutdownHookManager: ShutdownHookManager completed shutdown.
+2024-12-28 21:27:42,164 DEBUG util.Shell: setsid exited with exit code 0
+2024-12-28 21:27:42,168 DEBUG conf.Configuration: parsing URL jar:file:/opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar!/core-default.xml
+2024-12-28 21:27:42,170 DEBUG conf.Configuration: parsing input stream sun.net.www.protocol.jar.JarURLConnection$JarURLInputStream@646be2c3
+2024-12-28 21:27:42,281 DEBUG conf.Configuration: parsing URL file:/opt/hadoop/etc/hadoop/core-site.xml
+2024-12-28 21:27:42,281 DEBUG conf.Configuration: parsing input stream java.io.BufferedInputStream@75f32542
+2024-12-28 21:27:42,359 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"GetGroups"})
+2024-12-28 21:27:42,366 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Rate of failed kerberos logins and latency (milliseconds)"})
+2024-12-28 21:27:42,367 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Rate of successful kerberos logins and latency (milliseconds)"})
+2024-12-28 21:27:42,367 DEBUG lib.MutableMetricsFactory: field private org.apache.hadoop.metrics2.lib.MutableGaugeInt org.apache.hadoop.security.UserGroupInformation$UgiMetrics.renewalFailures with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Renewal failures since last successful login"})
+2024-12-28 21:27:42,367 DEBUG lib.MutableMetricsFactory: field private org.apache.hadoop.metrics2.lib.MutableGaugeLong org.apache.hadoop.security.UserGroupInformation$UgiMetrics.renewalFailuresTotal with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Renewal failures since startup"})
+2024-12-28 21:27:42,369 DEBUG impl.MetricsSystemImpl: UgiMetrics, User and group related metrics
+2024-12-28 21:27:42,397 DEBUG security.SecurityUtil: Setting hadoop.security.token.service.use_ip to true
+2024-12-28 21:27:42,476 DEBUG security.Groups:  Creating new Groups object
+2024-12-28 21:27:42,477 DEBUG util.NativeCodeLoader: Trying to load the custom-built native-hadoop library...
+2024-12-28 21:27:42,478 DEBUG util.NativeCodeLoader: Loaded the native-hadoop library
+2024-12-28 21:27:42,478 DEBUG security.JniBasedUnixGroupsMapping: Using JniBasedUnixGroupsMapping for Group resolution
+2024-12-28 21:27:42,479 DEBUG security.JniBasedUnixGroupsMappingWithFallback: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMapping
+2024-12-28 21:27:42,502 DEBUG security.Groups: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+2024-12-28 21:27:42,623 DEBUG security.UserGroupInformation: Hadoop login
+2024-12-28 21:27:42,623 DEBUG security.UserGroupInformation: hadoop login commit
+2024-12-28 21:27:42,630 DEBUG security.UserGroupInformation: Using local user: UnixPrincipal: ubuntu
+2024-12-28 21:27:42,630 DEBUG security.UserGroupInformation: Using user: "UnixPrincipal: ubuntu" with name: ubuntu
+2024-12-28 21:27:42,630 DEBUG security.UserGroupInformation: User entry: "ubuntu"
+2024-12-28 21:27:42,631 DEBUG security.UserGroupInformation: UGI loginUser: ubuntu (auth:SIMPLE)
+2024-12-28 21:27:42,633 DEBUG fs.FileSystem: Starting: Acquiring creator semaphore for hdfs://localhost:9000
+2024-12-28 21:27:42,633 DEBUG fs.FileSystem: Acquiring creator semaphore for hdfs://localhost:9000: duration 0:00.001s
+2024-12-28 21:27:42,634 DEBUG fs.FileSystem: Starting: Creating FS hdfs://localhost:9000
+2024-12-28 21:27:42,634 DEBUG fs.FileSystem: Loading filesystems
+2024-12-28 21:27:42,645 DEBUG fs.FileSystem: file:// = class org.apache.hadoop.fs.LocalFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:42,651 DEBUG fs.FileSystem: viewfs:// = class org.apache.hadoop.fs.viewfs.ViewFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:42,654 DEBUG fs.FileSystem: har:// = class org.apache.hadoop.fs.HarFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:42,656 DEBUG fs.FileSystem: http:// = class org.apache.hadoop.fs.http.HttpFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:42,657 DEBUG fs.FileSystem: https:// = class org.apache.hadoop.fs.http.HttpsFileSystem from /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+2024-12-28 21:27:42,666 DEBUG fs.FileSystem: hdfs:// = class org.apache.hadoop.hdfs.DistributedFileSystem from /opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.3.6.jar
+2024-12-28 21:27:42,677 DEBUG fs.FileSystem: webhdfs:// = class org.apache.hadoop.hdfs.web.WebHdfsFileSystem from /opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.3.6.jar
+2024-12-28 21:27:42,680 DEBUG fs.FileSystem: swebhdfs:// = class org.apache.hadoop.hdfs.web.SWebHdfsFileSystem from /opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.3.6.jar
+2024-12-28 21:27:42,680 DEBUG fs.FileSystem: Looking for FS supporting hdfs
+2024-12-28 21:27:42,680 DEBUG fs.FileSystem: looking for configuration option fs.hdfs.impl
+2024-12-28 21:27:42,711 DEBUG fs.FileSystem: Looking in service filesystems for implementation class
+2024-12-28 21:27:42,711 DEBUG fs.FileSystem: FS for hdfs is class org.apache.hadoop.hdfs.DistributedFileSystem
+2024-12-28 21:27:42,740 DEBUG impl.DfsClientConf: dfs.client.use.legacy.blockreader.local = false
+2024-12-28 21:27:42,740 DEBUG impl.DfsClientConf: dfs.client.read.shortcircuit = false
+2024-12-28 21:27:42,740 DEBUG impl.DfsClientConf: dfs.client.domain.socket.data.traffic = false
+2024-12-28 21:27:42,740 DEBUG impl.DfsClientConf: dfs.domain.socket.path = 
+2024-12-28 21:27:42,749 DEBUG hdfs.DFSClient: Sets dfs.client.block.write.replace-datanode-on-failure.min-replication to 0
+2024-12-28 21:27:42,760 DEBUG retry.RetryUtils: multipleLinearRandomRetry = null
+2024-12-28 21:27:42,774 DEBUG ipc.Server: rpcKind=RPC_PROTOCOL_BUFFER, rpcRequestWrapperClass=class org.apache.hadoop.ipc.ProtobufRpcEngine2$RpcProtobufRequest, rpcInvoker=org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker@22f59fa
+2024-12-28 21:27:42,777 DEBUG ipc.Client: getting client out of cache: Client-cf5a9b61d3bd4301ac350fd9aec72eec
+2024-12-28 21:27:43,091 DEBUG unix.DomainSocketWatcher: org.apache.hadoop.net.unix.DomainSocketWatcher$2@203ddad6: starting with interruptCheckPeriodMs = 60000
+2024-12-28 21:27:43,124 DEBUG util.PerformanceAdvisory: Both short-circuit local reads and UNIX domain socket are disabled.
+2024-12-28 21:27:43,129 DEBUG sasl.DataTransferSaslUtil: DataTransferProtocol not using SaslPropertiesResolver, no QOP found in configuration for dfs.data.transfer.protection
+2024-12-28 21:27:43,131 DEBUG fs.FileSystem: Creating FS hdfs://localhost:9000: duration 0:00.497s
+2024-12-28 21:27:43,133 DEBUG fs.Globber: Created Globber for path=/, symlinks=true
+2024-12-28 21:27:43,133 DEBUG fs.Globber: Starting: glob /
+2024-12-28 21:27:43,133 DEBUG fs.Globber: Filesystem glob /
+2024-12-28 21:27:43,134 DEBUG fs.Globber: Pattern: /
+2024-12-28 21:27:43,172 DEBUG ipc.Client: The ping interval is 60000 ms.
+2024-12-28 21:27:43,173 DEBUG ipc.Client: Connecting to localhost/127.0.0.1:9000
+2024-12-28 21:27:43,173 DEBUG ipc.Client: Setup connection to localhost/127.0.0.1:9000
+2024-12-28 21:27:43,194 DEBUG ipc.Client: IPC Client (125994398) connection to localhost/127.0.0.1:9000 from ubuntu: starting, having connections 1
+2024-12-28 21:27:43,197 DEBUG ipc.Client: IPC Client (125994398) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (125994398) connection to localhost/127.0.0.1:9000 from ubuntu sending #0 org.apache.hadoop.hdfs.protocol.ClientProtocol.getFileInfo
+2024-12-28 21:27:43,205 DEBUG ipc.Client: IPC Client (125994398) connection to localhost/127.0.0.1:9000 from ubuntu got value #0
+2024-12-28 21:27:43,206 DEBUG ipc.ProtobufRpcEngine2: Call: getFileInfo took 67ms
+2024-12-28 21:27:43,237 DEBUG fs.Globber: glob /: duration 0:00.104s
+2024-12-28 21:27:43,241 DEBUG ipc.Client: IPC Client (125994398) connection to localhost/127.0.0.1:9000 from ubuntuIPC Client (125994398) connection to localhost/127.0.0.1:9000 from ubuntu sending #1 org.apache.hadoop.hdfs.protocol.ClientProtocol.getListing
+2024-12-28 21:27:43,244 DEBUG ipc.Client: IPC Client (125994398) connection to localhost/127.0.0.1:9000 from ubuntu got value #1
+2024-12-28 21:27:43,244 DEBUG ipc.ProtobufRpcEngine2: Call: getListing took 4ms
+Found 2 items
+drwxr-xr-x   - ubuntu supergroup          0 2024-12-28 21:23 /test
+drwxr-xr-x   - ubuntu supergroup          0 2024-12-28 20:52 /user
+2024-12-28 21:27:43,252 DEBUG fs.FileSystem: FileSystem.close() by method: org.apache.hadoop.hdfs.DistributedFileSystem.close(DistributedFileSystem.java:1531)); Key: (ubuntu (auth:SIMPLE))@hdfs://localhost:9000; URI: hdfs://localhost:9000; Object Identity Hash: 6c65c8bf
+2024-12-28 21:27:43,253 DEBUG ipc.Client: stopping client from cache: Client-cf5a9b61d3bd4301ac350fd9aec72eec
+2024-12-28 21:27:43,255 DEBUG ipc.Client: removing client from cache: Client-cf5a9b61d3bd4301ac350fd9aec72eec
+2024-12-28 21:27:43,255 DEBUG ipc.Client: stopping actual client because no more references remain: Client-cf5a9b61d3bd4301ac350fd9aec72eec
+2024-12-28 21:27:43,255 DEBUG ipc.Client: Stopping client
+2024-12-28 21:27:43,256 DEBUG ipc.Client: IPC Client (125994398) connection to localhost/127.0.0.1:9000 from ubuntu: closed
+2024-12-28 21:27:43,256 DEBUG ipc.Client: IPC Client (125994398) connection to localhost/127.0.0.1:9000 from ubuntu: stopped, remaining connections 0
+2024-12-28 21:27:43,261 DEBUG hdfs.KeyProviderCache: Invalidating all cached KeyProviders.
+2024-12-28 21:27:43,263 DEBUG util.ShutdownHookManager: Completed shutdown in 0.014 seconds; Timeouts: 0
+2024-12-28 21:27:43,297 DEBUG util.ShutdownHookManager: ShutdownHookManager completed shutdown.
+4. Installing Flink:
+5. Downloading Kafka:

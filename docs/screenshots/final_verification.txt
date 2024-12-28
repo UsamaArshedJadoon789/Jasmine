@@ -1,0 +1,103 @@
+Final Platform Verification
+========================
+1. Verifying all running processes:
+141282 Jps
+88416 TaskManagerRunner
+137799 TaskManagerRunner
+74057 Master
+135531 TaskManagerRunner
+140943 TaskManagerRunner
+107500 TaskManagerRunner
+112721 NameNode
+129397 TaskManagerRunner
+113111 SecondaryNameNode
+124150 Kafka
+61913 QuorumPeerMain
+133400 TaskManagerRunner
+97723 TaskManagerRunner
+125146 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+63934 TaskManagerRunner
+\n2. Platform versions and configurations:
+\nJava Version:
+openjdk version "11.0.25" 2024-10-15
+OpenJDK Runtime Environment (build 11.0.25+9-post-Ubuntu-1ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.25+9-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+\nHadoop Version:
+Hadoop 3.3.6
+Source code repository https://github.com/apache/hadoop.git -r 1be78238728da9266a4f88195058f08fd012bf9c
+Compiled by ubuntu on 2023-06-18T08:22Z
+Compiled on platform linux-x86_64
+Compiled with protoc 3.7.1
+From source with checksum 5652179ad55f76cb287d9c633bb53bbd
+This command was run using /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+\nHadoop Configuration:
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/opt/hadoop/data</value>
+    </property>
+</configuration>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>/opt/hadoop/data/namenode</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>/opt/hadoop/data/datanode</value>
+    </property>
+</configuration>
+\nFlink Status:
+Waiting for response...
+No running jobs.
+No scheduled jobs.
+\nKafka Topics:
+test
+test-topic
+\n3. Creating setup documentation:
+Platform setup complete. Pushing changes to GitHub...

@@ -1,0 +1,28 @@
+Verifying Working Platforms
+========================
+1. Running Java Processes:
+88416 TaskManagerRunner
+142689 Jps
+137799 TaskManagerRunner
+74057 Master
+135531 TaskManagerRunner
+140943 TaskManagerRunner
+107500 TaskManagerRunner
+112721 NameNode
+129397 TaskManagerRunner
+113111 SecondaryNameNode
+124150 Kafka
+61913 QuorumPeerMain
+133400 TaskManagerRunner
+97723 TaskManagerRunner
+125146 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+63934 TaskManagerRunner
+\n2. Kafka Status:
+test
+test-topic
+\n3. Flink Status:
+Waiting for response...
+No running jobs.
+No scheduled jobs.
+\n4. Creating documentation:

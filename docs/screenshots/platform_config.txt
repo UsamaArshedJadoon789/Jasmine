@@ -1,0 +1,8 @@
+Platform Configuration Steps
+=========================
+1. Installing net-tools (with sudo):
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 110985 (apt-get)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+Failed to install net-tools with sudo -n, trying interactive sudo
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 110985 (apt-get)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?

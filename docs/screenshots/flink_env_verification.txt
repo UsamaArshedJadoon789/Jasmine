@@ -1,0 +1,43 @@
+Verifying Environment and Starting Flink
+==================================
+1. Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/opt/.devin/package/custom_binaries:/home/ubuntu/.local/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/ubuntu/.pyenv/shims:/home/ubuntu/.pyenv/bin:/opt/.devin/package/custom_binaries:/home/ubuntu/.nvm/versions/node/v22.11.0/bin:/home/ubuntu/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ubuntu/Jasmine/hadoop/bin:/home/ubuntu/Jasmine/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/home/ubuntu/.local/share/coursier/bin:/home/ubuntu/Jasmine/hadoop/bin:/home/ubuntu/Jasmine/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin
+FLINK_HOME=/home/ubuntu/Jasmine/flink
+\n2. Java Version:
+openjdk version "11.0.25" 2024-10-15
+OpenJDK Runtime Environment (build 11.0.25+9-post-Ubuntu-1ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.25+9-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+\n3. Flink Configuration:
+jobmanager.rpc.address: localhost
+jobmanager.memory.process.size: 1600m
+taskmanager.memory.process.size: 1728m
+taskmanager.numberOfTaskSlots: 2
+parallelism.default: 2
+state.backend: filesystem
+state.checkpoints.dir: file:///home/ubuntu/Jasmine/flink/checkpoints
+\n4. Setting JAVA_HOME in Flink env:
+\n5. Starting Flink cluster:
+Starting cluster.
+[INFO] 1 instance(s) of standalonesession are already running on devin-box.
+Starting standalonesession daemon on host devin-box.
+[INFO] 9 instance(s) of taskexecutor are already running on devin-box.
+Starting taskexecutor daemon on host devin-box.
+\n6. Verifying processes:
+88416 TaskManagerRunner
+137799 TaskManagerRunner
+74057 Master
+135531 TaskManagerRunner
+140943 TaskManagerRunner
+107500 TaskManagerRunner
+112721 NameNode
+141072 Jps
+129397 TaskManagerRunner
+113111 SecondaryNameNode
+124150 Kafka
+61913 QuorumPeerMain
+133400 TaskManagerRunner
+97723 TaskManagerRunner
+125146 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+63934 TaskManagerRunner

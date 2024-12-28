@@ -1,0 +1,9 @@
+Installing Apache Kafka (Chunked Download)
+====================================
+1. Downloading Kafka (with progress):
+--2024-12-28 21:43:32--  https://dlcdn.apache.org/kafka/3.6.1/kafka_2.13-3.6.1.tgz
+Resolving dlcdn.apache.org (dlcdn.apache.org)... 151.101.2.132, 2a04:4e42::644
+Connecting to dlcdn.apache.org (dlcdn.apache.org)|151.101.2.132|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-12-28 21:43:32 ERROR 404: Not Found.
+

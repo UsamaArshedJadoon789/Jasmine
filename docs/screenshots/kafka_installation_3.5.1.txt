@@ -1,0 +1,20 @@
+Installing Apache Kafka 3.5.1
+===========================
+1. Downloading Kafka 3.5.1:
+--2024-12-28 21:44:24--  https://archive.apache.org/dist/kafka/3.5.1/kafka_2.13-3.5.1.tgz
+Resolving archive.apache.org (archive.apache.org)... 65.108.204.189, 2a01:4f9:1a:a084::2
+Connecting to archive.apache.org (archive.apache.org)|65.108.204.189|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 106748875 (102M) [application/x-gzip]
+Saving to: 'kafka_2.13-3.5.1.tgz'
+
+     0K ........ ........ ........ ........ 31% 9.94M 7s
+ 32768K ........ ........ ........ ........ 62% 15.5M 3s
+ 65536K ........ ........ ........ ........ 94% 15.7M 0s
+ 98304K .....                              100% 15.6M=7.7s
+
+2024-12-28 21:44:32 (13.2 MB/s) - 'kafka_2.13-3.5.1.tgz' saved [106748875/106748875]
+
+2. Extracting Kafka:
+3. Setting up directories:
+4. Creating configuration:

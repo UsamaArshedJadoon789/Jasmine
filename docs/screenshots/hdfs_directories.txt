@@ -1,0 +1,14 @@
+Setting up HDFS Directories
+=======================
+1. Creating HDFS Directories:
+2. Directory Permissions:
+total 0
+drwxr-xr-x  2 ubuntu ubuntu   40 Dec 28 21:33 .
+drwxrwxrwt 44 root   root   1240 Dec 28 21:33 ..
+total 16
+drwxr-xr-x 4 ubuntu ubuntu 4096 Dec 28 21:33 .
+drwxr-xr-x 3 ubuntu ubuntu 4096 Dec 28 21:33 ..
+drwxr-xr-x 2 ubuntu ubuntu 4096 Dec 28 21:33 datanode
+drwxr-xr-x 2 ubuntu ubuntu 4096 Dec 28 21:33 namenode
+3. Formatting HDFS:
+namenode is running as process 103156.  Stop it first and ensure /tmp/hadoop-ubuntu-namenode.pid file is empty before retry.

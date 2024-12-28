@@ -1,0 +1,110 @@
+Platform Configuration Status
+=========================
+1. HDFS Status:
+103488 SecondaryNameNode
+88416 TaskManagerRunner
+103156 NameNode
+74057 Master
+61913 QuorumPeerMain
+97723 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+105997 Jps
+87277 Kafka
+63934 TaskManagerRunner
+Configured Capacity: 0 (0 B)
+Present Capacity: 0 (0 B)
+DFS Remaining: 0 (0 B)
+DFS Used: 0 (0 B)
+DFS Used%: 0.00%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+2. Configuring Spark:
+3. Starting Kafka ZooKeeper:
+4. Starting Kafka Server:
+5. Starting Flink:
+Starting cluster.
+[ERROR] The execution result is empty.
+[ERROR] Could not get JVM parameters and dynamic configurations properly.
+[ERROR] Raw output from BashJavaUtils:
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+INFO  [] - Loading configuration property: taskmanager.memory.process.size, 2048m
+INFO  [] - Loading configuration property: parallelism.default, 4
+INFO  [] - Loading configuration property: jobmanager.rpc.address, localhost
+INFO  [] - Loading configuration property: taskmanager.numberOfTaskSlots, 4
+INFO  [] - Loading configuration property: state.backend, filesystem
+INFO  [] - Loading configuration property: state.checkpoints.dir, file:///home/ubuntu/Jasmine/flink/checkpoints
+Exception in thread "main" org.apache.flink.configuration.IllegalConfigurationException: JobManager memory configuration failed: Either required fine-grained memory (jobmanager.memory.heap.size), or Total Flink Memory size (Key: 'jobmanager.memory.flink.size' , default: null (fallback keys: [])), or Total Process Memory size (Key: 'jobmanager.memory.process.size' , default: null (fallback keys: [])) need to be configured explicitly.
+	at org.apache.flink.runtime.jobmanager.JobManagerProcessUtils.processSpecFromConfigWithNewOptionToInterpretLegacyHeap(JobManagerProcessUtils.java:78)
+	at org.apache.flink.runtime.util.bash.BashJavaUtils.getJmResourceParams(BashJavaUtils.java:98)
+	at org.apache.flink.runtime.util.bash.BashJavaUtils.runCommand(BashJavaUtils.java:69)
+	at org.apache.flink.runtime.util.bash.BashJavaUtils.main(BashJavaUtils.java:56)
+Caused by: org.apache.flink.configuration.IllegalConfigurationException: Either required fine-grained memory (jobmanager.memory.heap.size), or Total Flink Memory size (Key: 'jobmanager.memory.flink.size' , default: null (fallback keys: [])), or Total Process Memory size (Key: 'jobmanager.memory.process.size' , default: null (fallback keys: [])) need to be configured explicitly.
+	at org.apache.flink.runtime.util.config.memory.ProcessMemoryUtils.failBecauseRequiredOptionsNotConfigured(ProcessMemoryUtils.java:129)
+	at org.apache.flink.runtime.util.config.memory.ProcessMemoryUtils.memoryProcessSpecFromConfig(ProcessMemoryUtils.java:86)
+	at org.apache.flink.runtime.jobmanager.JobManagerProcessUtils.processSpecFromConfig(JobManagerProcessUtils.java:83)
+	at org.apache.flink.runtime.jobmanager.JobManagerProcessUtils.processSpecFromConfigWithNewOptionToInterpretLegacyHeap(JobManagerProcessUtils.java:73)
+	... 3 more
+[INFO] 3 instance(s) of taskexecutor are already running on devin-box.
+Starting taskexecutor daemon on host devin-box.
+6. Final Service Status:
+103488 SecondaryNameNode
+88416 TaskManagerRunner
+103156 NameNode
+74057 Master
+61913 QuorumPeerMain
+107659 Jps
+97723 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+87277 Kafka
+107500 TaskManagerRunner
+63934 TaskManagerRunner
+7. Testing Flink Web UI:
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one
+  ~ or more contributor license agreements.  See the NOTICE file
+  ~ distributed with this work for additional information
+  ~ regarding copyright ownership.  The ASF licenses this file
+  ~ to you under the Apache License, Version 2.0 (the
+  ~ "License"); you may not use this file except in compliance
+  ~ with the License.  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  --><!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apache Flink Web Dashboard</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#aa1919">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <base href="./">
+  <style>html,body{width:100%;height:100%}*,*:before,*:after{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{margin:0;color:#000000d9;font-size:14px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";font-variant:tabular-nums;line-height:1.5715;background-color:#fff;font-feature-settings:"tnum","tnum"}html{--antd-wave-shadow-color:#1890ff;--scroll-bar:0}*{box-sizing:border-box;margin:0;padding:0;outline:none}</style><link rel="stylesheet" href="styles.3af398bef587fbd6.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.3af398bef587fbd6.css"></noscript></head>
+  <body>
+    <flink-root></flink-root>
+  <script src="runtime.e6100484b544df9f.js" type="module"></script><script src="polyfills.062e4debad217dcd.js" type="module"></script><script src="main.2460c3426ac782a9.js" type="module"></script>
+
+</body></html>

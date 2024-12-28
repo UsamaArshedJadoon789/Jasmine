@@ -1,0 +1,10 @@
+=== HDFS Functionality Test ===
+1. Creating test directory:
+2. Creating test file:
+3. Uploading test file:
+4. Listing HDFS contents:
+Found 1 items
+-rw-r--r--   1 ubuntu supergroup         11 2024-12-28 22:01 /user/ubuntu/test/test.txt
+5. Reading test file:
+Hello HDFS
+\n6. Installing Spark:

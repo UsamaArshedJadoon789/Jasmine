@@ -1,0 +1,47 @@
+Configuring and Starting Flink
+==========================
+1. Configuring Flink:
+2. Starting Flink cluster:
+Starting cluster.
+[INFO] 1 instance(s) of standalonesession are already running on devin-box.
+Starting standalonesession daemon on host devin-box.
+[INFO] 7 instance(s) of taskexecutor are already running on devin-box.
+Starting taskexecutor daemon on host devin-box.
+3. Verifying Flink processes:
+88416 TaskManagerRunner
+74057 Master
+135531 TaskManagerRunner
+107500 TaskManagerRunner
+112721 NameNode
+129397 TaskManagerRunner
+113111 SecondaryNameNode
+124150 Kafka
+61913 QuorumPeerMain
+135704 Jps
+133400 TaskManagerRunner
+97723 TaskManagerRunner
+125146 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+63934 TaskManagerRunner
+\n4. Verifying all platform processes:
+Running Java Processes:
+88416 TaskManagerRunner
+74057 Master
+135531 TaskManagerRunner
+135727 Jps
+107500 TaskManagerRunner
+112721 NameNode
+129397 TaskManagerRunner
+113111 SecondaryNameNode
+124150 Kafka
+61913 QuorumPeerMain
+133400 TaskManagerRunner
+97723 TaskManagerRunner
+125146 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+63934 TaskManagerRunner
+\nPlatform Versions:
+Flink Version:
+Version: 1.18.1, Commit ID: a8c8b1c
+\nKafka Version:
+3.5.1

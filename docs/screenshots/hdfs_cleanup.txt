@@ -1,0 +1,23 @@
+Cleaning up HDFS
+==============
+1. Stopping HDFS:
+Stopping namenodes on [localhost]
+Stopping datanodes
+Stopping secondary namenodes [devin-box]
+2. Cleaning PID files:
+3. Restarting HDFS:
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [devin-box]
+4. Verifying Services:
+88416 TaskManagerRunner
+102371 Jps
+102199 SecondaryNameNode
+51383 NameNode
+74057 Master
+61913 QuorumPeerMain
+97723 TaskManagerRunner
+101946 DataNode
+63643 StandaloneSessionClusterEntrypoint
+87277 Kafka
+63934 TaskManagerRunner

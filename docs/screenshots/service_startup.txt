@@ -1,0 +1,29 @@
+Configuring and Starting Services
+==============================
+1. Starting ZooKeeper:
+2. Verifying ZooKeeper with jps:
+61913 QuorumPeerMain
+3. Starting Kafka:
+4. Verifying Kafka with jps:
+124150 Kafka
+5. Extracting and configuring Flink:
+6. Starting Flink cluster:
+Starting cluster.
+[INFO] 1 instance(s) of standalonesession are already running on devin-box.
+Starting standalonesession daemon on host devin-box.
+[INFO] 4 instance(s) of taskexecutor are already running on devin-box.
+Starting taskexecutor daemon on host devin-box.
+7. Verifying all Java processes:
+88416 TaskManagerRunner
+74057 Master
+107500 TaskManagerRunner
+112721 NameNode
+124855 StandaloneSessionClusterEntrypoint
+113111 SecondaryNameNode
+124150 Kafka
+61913 QuorumPeerMain
+125147 Jps
+97723 TaskManagerRunner
+125146 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+63934 TaskManagerRunner

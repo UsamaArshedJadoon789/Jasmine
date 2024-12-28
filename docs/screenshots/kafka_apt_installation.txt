@@ -1,0 +1,11 @@
+Installing Kafka via Package Manager
+===============================
+1. Adding Confluent Repository:
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+Repository: 'deb [arch=amd64] https://packages.confluent.io/deb/7.2 stable main'
+Description:
+Archive for codename: stable components: main
+More info: https://packages.confluent.io/deb/7.2
+Adding repository.
+Press [ENTER] to continue or Ctrl-c to cancel.

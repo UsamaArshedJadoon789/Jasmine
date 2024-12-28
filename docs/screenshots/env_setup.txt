@@ -1,0 +1,22 @@
+Environment Setup
+================
+1. Current Environment:
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+HADOOP_HOME=/opt/hadoop
+2. Setting Environment Variables:
+3. Verifying Java:
+openjdk version "11.0.25" 2024-10-15
+OpenJDK Runtime Environment (build 11.0.25+9-post-Ubuntu-1ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.25+9-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+4. Verifying Hadoop:
+Hadoop 3.3.6
+Source code repository https://github.com/apache/hadoop.git -r 1be78238728da9266a4f88195058f08fd012bf9c
+Compiled by ubuntu on 2023-06-18T08:22Z
+Compiled on platform linux-x86_64
+Compiled with protoc 3.7.1
+From source with checksum 5652179ad55f76cb287d9c633bb53bbd
+This command was run using /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+5. HDFS Configuration Status:
+-rw-r--r-- 1 ubuntu ubuntu  991 Dec 28 20:55 /opt/hadoop/etc/hadoop/core-site.xml
+-rw-r--r-- 1 ubuntu ubuntu 1113 Dec 28 20:53 /opt/hadoop/etc/hadoop/hdfs-site.xml
+Environment variables set and verified

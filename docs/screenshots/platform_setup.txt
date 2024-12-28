@@ -1,0 +1,12 @@
+Setting up Platform Configurations
+============================
+1. Creating platform_configs directory:
+2. Making environment script executable:
+3. Sourcing environment variables:
+Environment variables set:
+JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+KAFKA_HOME: /home/ubuntu/Jasmine/kafka
+FLINK_HOME: /home/ubuntu/Jasmine/flink
+\n4. Starting ZooKeeper with new environment:
+5. Verifying ZooKeeper process:
+61913 QuorumPeerMain

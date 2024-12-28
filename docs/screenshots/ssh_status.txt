@@ -1,0 +1,26 @@
+Checking SSH Status
+=================
+1. SSH Installation:
+/usr/bin/ssh
+2. SSH Service Status:
+root        1121  0.0  0.1  15432  9400 ?        Ss   19:57   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root        2248  0.0  0.1  15928  9928 ?        Ss   19:57   0:00 sshd: ubuntu [priv]
+ubuntu      2265  0.1  0.0  16688  8020 ?        S    19:57   0:07 sshd: ubuntu@pts/4,pts/0,pts/7,pts/2,pts/3
+root        2271  0.0  0.1  15928  9608 ?        Ss   19:57   0:00 sshd: ubuntu [priv]
+root        2287  0.0  0.1  15928  9524 ?        Ss   19:57   0:00 sshd: ubuntu [priv]
+ubuntu      2299  0.0  0.1  16704  8224 ?        S    19:57   0:00 sshd: ubuntu@notty
+root        2302  0.0  0.1  16548 10220 ?        Ss   19:57   0:00 sshd: root@notty
+ubuntu      2313  0.0  0.0  16492  7572 ?        S    19:57   0:00 sshd: ubuntu@notty
+root       14273  0.0  0.1  15928  9780 ?        Ss   20:08   0:00 sshd: ubuntu [priv]
+ubuntu     14303  0.0  0.0  16492  7860 ?        S    20:08   0:00 sshd: ubuntu@notty
+root      111109  0.0  0.0   2892  1868 pts/6    SN+  21:35   0:00 /bin/sh /usr/bin/ucf --three-way --debconf-ok --sum-file /usr/share/openssh/sshd_config.md5sum /tmp/tmp.vl3ZkHGSWi /etc/ssh/sshd_config
+3. SSH Directory:
+total 32
+drwx------ 1 ubuntu ubuntu 4096 Dec 28 21:26 .
+drwxr-x--- 1 ubuntu ubuntu 4096 Dec 28 21:18 ..
+-rw------- 1 ubuntu ubuntu 1710 Dec 28 21:26 authorized_keys
+-rw------- 1 ubuntu ubuntu 2602 Dec 28 21:26 id_rsa
+-rw-r--r-- 1 ubuntu ubuntu  570 Dec 28 21:26 id_rsa.pub
+-rw-r--r-- 1 ubuntu ubuntu  284 Dec 28 20:23 known_hosts
+4. Testing SSH localhost:
+SSH test successful

@@ -1,0 +1,15 @@
+Restarting Services with New Configurations
+=====================================
+1. Starting ZooKeeper with new config:
+2. Verifying ZooKeeper:
+61913 QuorumPeerMain
+3. Starting Kafka with new config:
+4. Verifying Kafka:
+124150 Kafka
+5. Configuring Flink:
+6. Starting Flink cluster:
+Starting cluster.
+[INFO] 1 instance(s) of standalonesession are already running on devin-box.
+Starting standalonesession daemon on host devin-box.
+[INFO] 5 instance(s) of taskexecutor are already running on devin-box.
+Starting taskexecutor daemon on host devin-box.

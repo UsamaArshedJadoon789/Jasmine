@@ -1,0 +1,28 @@
+Starting Kafka Service Only
+======================
+1. Verifying ZooKeeper is running:
+61913 QuorumPeerMain
+\n2. Starting Kafka broker:
+\n3. Verifying Kafka process:
+124150 Kafka
+\n4. Checking Kafka logs:
+[2024-12-28 21:51:10,583] INFO [ThrottledChannelReaper-ControllerMutation]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2024-12-28 21:51:10,584] INFO [ThrottledChannelReaper-ControllerMutation]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2024-12-28 21:51:10,584] INFO [SocketServer listenerType=ZK_BROKER, nodeId=0] Shutting down socket server (kafka.network.SocketServer)
+[2024-12-28 21:51:10,608] INFO [SocketServer listenerType=ZK_BROKER, nodeId=0] Shutdown completed (kafka.network.SocketServer)
+[2024-12-28 21:51:10,612] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics)
+[2024-12-28 21:51:10,612] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics)
+[2024-12-28 21:51:10,613] INFO Broker and topic stats closed (kafka.server.BrokerTopicStats)
+[2024-12-28 21:51:10,617] INFO App info kafka.server for 0 unregistered (org.apache.kafka.common.utils.AppInfoParser)
+[2024-12-28 21:51:10,617] INFO [KafkaServer id=0] shut down completed (kafka.server.KafkaServer)
+[2024-12-28 21:51:10,617] ERROR Exiting Kafka due to fatal exception during startup. (kafka.Kafka$)
+org.apache.zookeeper.KeeperException$NodeExistsException: KeeperErrorCode = NodeExists
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:126)
+	at kafka.zk.KafkaZkClient$CheckedEphemeral.getAfterNodeExists(KafkaZkClient.scala:2189)
+	at kafka.zk.KafkaZkClient$CheckedEphemeral.create(KafkaZkClient.scala:2127)
+	at kafka.zk.KafkaZkClient.checkedEphemeralCreate(KafkaZkClient.scala:2094)
+	at kafka.zk.KafkaZkClient.registerBroker(KafkaZkClient.scala:106)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:365)
+	at kafka.Kafka$.main(Kafka.scala:113)
+	at kafka.Kafka.main(Kafka.scala)
+[2024-12-28 21:51:10,617] INFO [KafkaServer id=0] shutting down (kafka.server.KafkaServer)

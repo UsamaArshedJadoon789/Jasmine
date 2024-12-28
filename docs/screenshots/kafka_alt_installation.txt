@@ -1,0 +1,10 @@
+Installing Apache Kafka (Alternative Mirror)
+=====================================
+1. Downloading Kafka:
+--2024-12-28 21:44:04--  https://downloads.apache.org/kafka/3.6.1/kafka_2.13-3.6.1.tgz
+Resolving downloads.apache.org (downloads.apache.org)... 135.181.214.104, 88.99.208.237, 2a01:4f8:10a:39da::2, ...
+Connecting to downloads.apache.org (downloads.apache.org)|135.181.214.104|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-12-28 21:44:04 ERROR 404: Not Found.
+
+2. Extracting Kafka:

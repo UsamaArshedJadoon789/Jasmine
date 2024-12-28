@@ -1,0 +1,33 @@
+=== Updating Hadoop Environment ===
+1. Setting environment variables in hadoop-env.sh:
+2. Creating PID directory:
+3. Starting HDFS services:
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [devin-box]
+4. Verifying services:
+124150 Kafka
+61913 QuorumPeerMain
+152217 SecondaryNameNode
+150687 NameNode
+152477 Jps
+Configured Capacity: 0 (0 B)
+Present Capacity: 0 (0 B)
+DFS Remaining: 0 (0 B)
+DFS Used: 0 (0 B)
+DFS Used%: 0.00%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------

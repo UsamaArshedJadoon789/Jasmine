@@ -1,0 +1,14 @@
+Verifying Environment Setup
+========================
+1. Java Version and Environment:
+openjdk version "11.0.25" 2024-10-15
+OpenJDK Runtime Environment (build 11.0.25+9-post-Ubuntu-1ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.25+9-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+\nJAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+\n2. Setting up environment variables:
+Updated JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+\n3. Verifying Java after env update:
+openjdk version "11.0.25" 2024-10-15
+OpenJDK Runtime Environment (build 11.0.25+9-post-Ubuntu-1ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.25+9-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+\n4. Creating environment file:

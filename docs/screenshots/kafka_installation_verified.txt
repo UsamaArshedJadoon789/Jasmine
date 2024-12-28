@@ -1,0 +1,5 @@
+Installing Apache Kafka (with verification)
+====================================
+1. Downloading Kafka and checksum:
+2. Verifying checksum:
+sha512sum: kafka_2.13-3.6.1.tgz.sha512: no properly formatted SHA512 checksum lines found

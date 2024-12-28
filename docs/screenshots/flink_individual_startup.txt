@@ -1,0 +1,6 @@
+Starting Flink Components Individually
+=================================
+1. Starting Flink JobManager:
+[INFO] 1 instance(s) of standalonesession are already running on devin-box.
+Starting standalonesession daemon on host devin-box.
+\n2. Verifying JobManager:

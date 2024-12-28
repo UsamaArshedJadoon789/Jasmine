@@ -1,0 +1,9 @@
+Verifying Hadoop Services
+======================
+1. Running Java processes:
+146929 Jps
+145972 SecondaryNameNode
+145636 NameNode
+124150 Kafka
+61913 QuorumPeerMain
+\n2. Testing HDFS operations:

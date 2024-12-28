@@ -1,0 +1,29 @@
+Starting Kafka and Verifying Services
+=================================
+1. Starting Kafka broker:
+2. Verifying running processes:
+88416 TaskManagerRunner
+74057 Master
+107500 TaskManagerRunner
+112721 NameNode
+131856 Jps
+129397 TaskManagerRunner
+113111 SecondaryNameNode
+124150 Kafka
+61913 QuorumPeerMain
+97723 TaskManagerRunner
+125146 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+63934 TaskManagerRunner
+\n3. Testing Kafka functionality:
+Created topic test-topic.
+\n4. Listing Kafka topics:
+test
+test-topic
+\n5. Configuring Flink:
+\n6. Starting Flink cluster:
+Starting cluster.
+[INFO] 1 instance(s) of standalonesession are already running on devin-box.
+Starting standalonesession daemon on host devin-box.
+[INFO] 6 instance(s) of taskexecutor are already running on devin-box.
+Starting taskexecutor daemon on host devin-box.

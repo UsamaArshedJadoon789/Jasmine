@@ -1,0 +1,45 @@
+Environment Check
+================
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+HADOOP_HOME=/opt/hadoop
+PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/opt/.devin/package/custom_binaries:/home/ubuntu/.local/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/ubuntu/.pyenv/shims:/home/ubuntu/.pyenv/bin:/opt/.devin/package/custom_binaries:/home/ubuntu/.nvm/versions/node/v22.11.0/bin:/home/ubuntu/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ubuntu/Jasmine/hadoop/bin:/home/ubuntu/Jasmine/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/home/ubuntu/.local/share/coursier/bin:/home/ubuntu/Jasmine/hadoop/bin:/home/ubuntu/Jasmine/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin
+Directory Permissions:
+total 20
+drwxr-xr-x  5 ubuntu ubuntu 4096 Dec 28 20:56 .
+drwxr-xr-x 12 ubuntu ubuntu 4096 Dec 28 20:52 ..
+drwx------  3 ubuntu ubuntu 4096 Dec 28 20:56 datanode
+drwxrwxr-x  3 ubuntu ubuntu 4096 Dec 28 20:56 dfs
+drwxr-xr-x  3 ubuntu ubuntu 4096 Dec 28 21:24 namenode
+Starting HDFS with debug:
+Starting namenodes on [localhost]
+Starting datanodes
+localhost: datanode is running as process 73120.  Stop it first and ensure /tmp/hadoop-ubuntu-datanode.pid file is empty before retry.
+Starting secondary namenodes [devin-box]
+devin-box: secondarynamenode is running as process 73290.  Stop it first and ensure /tmp/hadoop-ubuntu-secondarynamenode.pid file is empty before retry.
+2024-12-28 21:27:21,502 DEBUG util.Shell: setsid exited with exit code 0
+2024-12-28 21:27:21,853 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"GetGroups"})
+2024-12-28 21:27:21,861 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Rate of failed kerberos logins and latency (milliseconds)"})
+2024-12-28 21:27:21,861 DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Rate of successful kerberos logins and latency (milliseconds)"})
+2024-12-28 21:27:21,862 DEBUG lib.MutableMetricsFactory: field private org.apache.hadoop.metrics2.lib.MutableGaugeInt org.apache.hadoop.security.UserGroupInformation$UgiMetrics.renewalFailures with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Renewal failures since last successful login"})
+2024-12-28 21:27:21,863 DEBUG lib.MutableMetricsFactory: field private org.apache.hadoop.metrics2.lib.MutableGaugeLong org.apache.hadoop.security.UserGroupInformation$UgiMetrics.renewalFailuresTotal with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName="Ops", always=false, valueName="Time", about="", interval=10, type=DEFAULT, value={"Renewal failures since startup"})
+2024-12-28 21:27:21,865 DEBUG impl.MetricsSystemImpl: UgiMetrics, User and group related metrics
+2024-12-28 21:27:21,897 DEBUG security.SecurityUtil: Setting hadoop.security.token.service.use_ip to true
+2024-12-28 21:27:21,960 DEBUG security.Groups:  Creating new Groups object
+2024-12-28 21:27:21,961 DEBUG util.NativeCodeLoader: Trying to load the custom-built native-hadoop library...
+2024-12-28 21:27:21,961 DEBUG util.NativeCodeLoader: Loaded the native-hadoop library
+2024-12-28 21:27:21,962 DEBUG security.JniBasedUnixGroupsMapping: Using JniBasedUnixGroupsMapping for Group resolution
+2024-12-28 21:27:21,962 DEBUG security.JniBasedUnixGroupsMappingWithFallback: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMapping
+2024-12-28 21:27:21,994 DEBUG security.Groups: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+2024-12-28 21:27:22,014 DEBUG security.UserGroupInformation: Hadoop login
+2024-12-28 21:27:22,014 DEBUG security.UserGroupInformation: hadoop login commit
+2024-12-28 21:27:22,017 DEBUG security.UserGroupInformation: Using local user: UnixPrincipal: ubuntu
+2024-12-28 21:27:22,017 DEBUG security.UserGroupInformation: Using user: "UnixPrincipal: ubuntu" with name: ubuntu
+2024-12-28 21:27:22,017 DEBUG security.UserGroupInformation: User entry: "ubuntu"
+2024-12-28 21:27:22,018 DEBUG security.UserGroupInformation: UGI loginUser: ubuntu (auth:SIMPLE)
+2024-12-28 21:27:22,019 DEBUG security.UserGroupInformation: PrivilegedAction [as: ubuntu (auth:SIMPLE)][action: org.apache.hadoop.hdfs.tools.GetConf$1@4d910fd6]
+java.lang.Exception
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1896)
+	at org.apache.hadoop.hdfs.tools.GetConf.run(GetConf.java:344)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:82)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:97)
+	at org.apache.hadoop.hdfs.tools.GetConf.main(GetConf.java:361)

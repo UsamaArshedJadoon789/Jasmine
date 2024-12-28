@@ -1,0 +1,9 @@
+Starting ZooKeeper Service
+=======================
+1. Verifying ZooKeeper files:
+-rwxrwxr-x 1 ubuntu ubuntu 1393 Jul 14  2023 kafka/bin/zookeeper-server-start.sh
+-rw-rw-r-- 1 ubuntu ubuntu 1205 Jul 14  2023 kafka/config/zookeeper.properties
+\n2. Making scripts executable:
+\n3. Starting ZooKeeper:
+\n4. Verifying ZooKeeper process:
+61913 QuorumPeerMain

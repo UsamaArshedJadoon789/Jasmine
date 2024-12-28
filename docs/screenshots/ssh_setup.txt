@@ -1,0 +1,78 @@
+Setting up SSH Configuration
+======================
+1. Creating SSH Directory:
+total 32
+drwx------ 1 ubuntu ubuntu 4096 Dec 28 21:26 .
+drwxr-x--- 1 ubuntu ubuntu 4096 Dec 28 21:18 ..
+-rw------- 1 ubuntu ubuntu 1710 Dec 28 21:26 authorized_keys
+-rw------- 1 ubuntu ubuntu 2602 Dec 28 21:26 id_rsa
+-rw-r--r-- 1 ubuntu ubuntu  570 Dec 28 21:26 id_rsa.pub
+-rw-r--r-- 1 ubuntu ubuntu  284 Dec 28 20:23 known_hosts
+2. Installing OpenSSH Server:
+Hit:1 https://download.docker.com/linux/ubuntu jammy InRelease
+Hit:2 https://deb.nodesource.com/node_20.x nodistro InRelease
+Hit:3 https://ngrok-agent.s3.amazonaws.com buster InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu jammy InRelease
+Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Hit:6 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:7 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  ncurses-base ncurses-term openssh-sftp-server ssh-import-id
+Suggested packages:
+  molly-guard monkeysphere ssh-askpass ufw
+The following NEW packages will be installed:
+  ncurses-base ncurses-term openssh-server openssh-sftp-server ssh-import-id
+0 upgraded, 5 newly installed, 0 to remove and 22 not upgraded.
+Need to get 771 kB of archives.
+After this operation, 6448 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 ncurses-base all 6.3-2ubuntu0.1 [20.2 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 openssh-sftp-server amd64 1:8.9p1-3ubuntu0.10 [38.9 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 openssh-server amd64 1:8.9p1-3ubuntu0.10 [435 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 ncurses-term all 6.3-2ubuntu0.1 [267 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 ssh-import-id all 5.11-0ubuntu1 [10.1 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 78, <> line 5.)
+debconf: falling back to frontend: Readline
+Preconfiguring packages ...
+Fetched 771 kB in 1s (1048 kB/s)
+Selecting previously unselected package ncurses-base.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 84277 files and directories currently installed.)
+Preparing to unpack .../ncurses-base_6.3-2ubuntu0.1_all.deb ...
+Unpacking ncurses-base (6.3-2ubuntu0.1) ...
+Setting up ncurses-base (6.3-2ubuntu0.1) ...
+Selecting previously unselected package openssh-sftp-server.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 84350 files and directories currently installed.)
+Preparing to unpack .../openssh-sftp-server_1%3a8.9p1-3ubuntu0.10_amd64.deb ...
+Unpacking openssh-sftp-server (1:8.9p1-3ubuntu0.10) ...
+Selecting previously unselected package openssh-server.
+Preparing to unpack .../openssh-server_1%3a8.9p1-3ubuntu0.10_amd64.deb ...
+Unpacking openssh-server (1:8.9p1-3ubuntu0.10) ...
+Selecting previously unselected package ncurses-term.
+Preparing to unpack .../ncurses-term_6.3-2ubuntu0.1_all.deb ...
+Unpacking ncurses-term (6.3-2ubuntu0.1) ...
+Selecting previously unselected package ssh-import-id.
+Preparing to unpack .../ssh-import-id_5.11-0ubuntu1_all.deb ...
+Unpacking ssh-import-id (5.11-0ubuntu1) ...
+Setting up openssh-sftp-server (1:8.9p1-3ubuntu0.10) ...
+Setting up openssh-server (1:8.9p1-3ubuntu0.10) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 78.)
+debconf: falling back to frontend: Readline
+Configuring openssh-server
+--------------------------
+
+sshd_config: A new version (/tmp/tmp.vl3ZkHGSWi) of configuration file 
+/etc/ssh/sshd_config is available, but the version installed currently has been 
+locally modified.
+
+  1. install the package maintainer's version
+  2. keep the local version currently installed
+  3. show the differences between the versions
+  4. show a side-by-side difference between the versions
+  5. start a new shell to examine the situation
+
+[4mWhat do you want to do about modified configuration file sshd_config? [24m[1m

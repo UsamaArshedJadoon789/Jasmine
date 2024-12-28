@@ -1,0 +1,248 @@
+HDFS Debug Information
+===================
+1. Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+INFOPATH=/home/linuxbrew/.linuxbrew/share/info:/home/linuxbrew/.linuxbrew/share/info:
+HADOOP_HOME=/opt/hadoop
+SPARK_DIST_CLASSPATH=/opt/hadoop/etc/hadoop:/opt/hadoop/share/hadoop/common/lib/*:/opt/hadoop/share/hadoop/common/*:/opt/hadoop/share/hadoop/hdfs:/opt/hadoop/share/hadoop/hdfs/lib/*:/opt/hadoop/share/hadoop/hdfs/*:/opt/hadoop/share/hadoop/mapreduce/*:/opt/hadoop/share/hadoop/yarn:/opt/hadoop/share/hadoop/yarn/lib/*:/opt/hadoop/share/hadoop/yarn/*
+PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/opt/.devin/package/custom_binaries:/home/ubuntu/.local/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/ubuntu/.pyenv/shims:/home/ubuntu/.pyenv/bin:/opt/.devin/package/custom_binaries:/home/ubuntu/.nvm/versions/node/v22.11.0/bin:/home/ubuntu/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ubuntu/Jasmine/hadoop/bin:/home/ubuntu/Jasmine/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/home/ubuntu/.local/share/coursier/bin:/home/ubuntu/Jasmine/hadoop/bin:/home/ubuntu/Jasmine/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/spark/bin:/home/ubuntu/Jasmine/spark/sbin:/home/ubuntu/Jasmine/kafka/bin:/home/ubuntu/Jasmine/flink/bin:/opt/hadoop/bin:/opt/hadoop/sbin
+2. Directory Permissions:
+total 832
+drwxrwxr-x  2 ubuntu ubuntu   4096 Dec 28 21:33 .
+drwxr-xr-x 12 ubuntu ubuntu   4096 Dec 28 20:52 ..
+-rw-rw-r--  1 ubuntu ubuntu      0 Dec 28 20:50 SecurityAuth-ubuntu.audit
+-rw-rw-r--  1 ubuntu ubuntu 138448 Dec 28 21:30 hadoop-ubuntu-datanode-devin-box.log
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:30 hadoop-ubuntu-datanode-devin-box.out
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:29 hadoop-ubuntu-datanode-devin-box.out.1
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:08 hadoop-ubuntu-datanode-devin-box.out.2
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 20:56 hadoop-ubuntu-datanode-devin-box.out.3
+-rw-rw-r--  1 ubuntu ubuntu 435829 Dec 28 21:31 hadoop-ubuntu-namenode-devin-box.log
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:30 hadoop-ubuntu-namenode-devin-box.out
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:29 hadoop-ubuntu-namenode-devin-box.out.1
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:29 hadoop-ubuntu-namenode-devin-box.out.2
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:28 hadoop-ubuntu-namenode-devin-box.out.3
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:27 hadoop-ubuntu-namenode-devin-box.out.4
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:26 hadoop-ubuntu-namenode-devin-box.out.5
+-rw-rw-r--  1 ubuntu ubuntu 168058 Dec 28 21:31 hadoop-ubuntu-secondarynamenode-devin-box.log
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:30 hadoop-ubuntu-secondarynamenode-devin-box.out
+-rw-rw-r--  1 ubuntu ubuntu    819 Dec 28 21:29 hadoop-ubuntu-secondarynamenode-devin-box.out.1
+-rw-rw-r--  1 ubuntu ubuntu  19929 Dec 28 21:29 hadoop-ubuntu-secondarynamenode-devin-box.out.2
+-rw-rw-r--  1 ubuntu ubuntu   9234 Dec 28 21:07 hadoop-ubuntu-secondarynamenode-devin-box.out.3
+3. Configuration Files:
+=== core-site.xml ===
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/opt/hadoop/data</value>
+    </property>
+</configuration>
+=== hdfs-site.xml ===
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>/opt/hadoop/data/namenode</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>/opt/hadoop/data/datanode</value>
+    </property>
+</configuration>
+4. HDFS Logs:
+2024-12-28 21:30:13,803 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Planning to load image: FSImageFile(file=/opt/hadoop/data/namenode/current/fsimage_0000000000000000000, cpktTxId=0000000000000000000)
+2024-12-28 21:30:13,892 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Loading 1 INodes.
+2024-12-28 21:30:13,902 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Successfully loaded 1 inodes
+2024-12-28 21:30:13,910 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Completed update blocks map and name cache, total waiting duration 1ms.
+2024-12-28 21:30:13,917 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf: Loaded FSImage in 0 seconds.
+2024-12-28 21:30:13,917 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded image for txid 0 from /opt/hadoop/data/namenode/current/fsimage_0000000000000000000
+2024-12-28 21:30:13,923 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Need to save fs image? false (staleImage=false, haEnabled=false, isRollingUpgrade=false)
+2024-12-28 21:30:13,923 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Starting log segment at 1
+2024-12-28 21:30:14,021 INFO org.apache.hadoop.hdfs.server.namenode.NameCache: initialized with 0 entries 0 lookups
+2024-12-28 21:30:14,021 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Finished loading FSImage in 296 msecs
+2024-12-28 21:30:14,370 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: RPC server is binding to localhost:9000
+2024-12-28 21:30:14,370 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Enable NameNode state context:false
+2024-12-28 21:30:14,404 INFO org.apache.hadoop.ipc.CallQueueManager: Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 1000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false.
+2024-12-28 21:30:14,434 INFO org.apache.hadoop.ipc.Server: Listener at localhost:9000
+2024-12-28 21:30:14,444 INFO org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 9000
+2024-12-28 21:30:14,654 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Registered FSNamesystemState, ReplicatedBlocksState and ECBlockGroupsState MBeans.
+2024-12-28 21:30:14,660 INFO org.apache.hadoop.hdfs.server.common.Util: Assuming 'file' scheme for path /opt/hadoop/data/namenode in configuration.
+2024-12-28 21:30:14,702 INFO org.apache.hadoop.hdfs.server.namenode.LeaseManager: Number of blocks under construction: 0
+2024-12-28 21:30:14,731 INFO org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminDefaultMonitor: Initialized the Default Decommission and Maintenance monitor
+2024-12-28 21:30:14,740 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: initializing replication queues
+2024-12-28 21:30:14,743 INFO org.apache.hadoop.hdfs.StateChange: STATE* Leaving safe mode after 0 secs
+2024-12-28 21:30:14,743 INFO org.apache.hadoop.hdfs.StateChange: STATE* Network topology has 0 racks and 0 datanodes
+2024-12-28 21:30:14,743 INFO org.apache.hadoop.hdfs.StateChange: STATE* UnderReplicatedBlocks has 0 blocks
+2024-12-28 21:30:14,738 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: Start MarkedDeleteBlockScrubber thread
+2024-12-28 21:30:14,791 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: Total number of blocks            = 0
+2024-12-28 21:30:14,791 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: Number of invalid blocks          = 0
+2024-12-28 21:30:14,791 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: Number of under-replicated blocks = 0
+2024-12-28 21:30:14,791 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: Number of  over-replicated blocks = 0
+2024-12-28 21:30:14,791 INFO org.apache.hadoop.hdfs.server.blockmanagement.BlockManager: Number of blocks being written    = 0
+2024-12-28 21:30:14,791 INFO org.apache.hadoop.hdfs.StateChange: STATE* Replication Queue initialization scan for invalid, over- and under-replicated blocks completed in 20 msec
+2024-12-28 21:30:14,835 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2024-12-28 21:30:14,837 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 9000: starting
+2024-12-28 21:30:14,850 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: NameNode RPC up at: localhost/127.0.0.1:9000
+2024-12-28 21:30:14,854 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Starting services required for active state
+2024-12-28 21:30:14,854 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: Initializing quota with 12 thread(s)
+2024-12-28 21:30:14,876 INFO org.apache.hadoop.hdfs.server.namenode.FSDirectory: Quota initialization completed in 22 milliseconds
+name space=1
+storage space=0
+storage types=RAM_DISK=0, SSD=0, DISK=0, ARCHIVE=0, PROVIDED=0
+2024-12-28 21:30:14,910 INFO org.apache.hadoop.hdfs.server.blockmanagement.CacheReplicationMonitor: Starting CacheReplicationMonitor with interval 30000 milliseconds
+2024-12-28 21:31:21,013 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2024-12-28 21:31:21,017 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Rolling edit logs
+2024-12-28 21:31:21,017 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Ending log segment 1, 1
+2024-12-28 21:31:21,021 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Number of transactions: 2 Total time for transactions(ms): 4 Number of transactions batched in Syncs: 0 Number of syncs: 2 SyncTimes(ms): 16 
+2024-12-28 21:31:21,023 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Number of transactions: 2 Total time for transactions(ms): 4 Number of transactions batched in Syncs: 0 Number of syncs: 3 SyncTimes(ms): 16 
+2024-12-28 21:31:21,029 INFO org.apache.hadoop.hdfs.server.namenode.FileJournalManager: Finalizing edits file /opt/hadoop/data/namenode/current/edits_inprogress_0000000000000000001 -> /opt/hadoop/data/namenode/current/edits_0000000000000000001-0000000000000000002
+2024-12-28 21:31:21,092 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Starting log segment at 3
+2024-12-28 21:31:21,578 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Sending fileName: /opt/hadoop/data/namenode/current/fsimage_0000000000000000000, fileSize: 401. Sent total: 401 bytes. Size of last segment intended to send: -1 bytes.
+2024-12-28 21:31:21,630 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Sending fileName: /opt/hadoop/data/namenode/current/edits_0000000000000000001-0000000000000000002, fileSize: 42. Sent total: 42 bytes. Size of last segment intended to send: -1 bytes.
+2024-12-28 21:31:22,144 INFO org.apache.hadoop.hdfs.server.namenode.ImageServlet: Rejecting a fsimage due to small time delta and txnid delta. Time since previous checkpoint is 387 expecting at least 2700 txnid delta since previous checkpoint is 2 expecting at least 1000000
+2024-12-28 21:30:20,368 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint Period   :3600 secs (60 min)
+2024-12-28 21:30:20,368 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Log Size Trigger    :1000000 txns
+2024-12-28 21:30:20,369 INFO org.apache.hadoop.hdfs.DFSUtil: Filter initializers set : org.apache.hadoop.http.lib.StaticUserWebFilter,org.apache.hadoop.hdfs.web.AuthFilterInitializer
+2024-12-28 21:30:20,377 INFO org.apache.hadoop.hdfs.DFSUtil: Starting Web-server for secondary at: http://0.0.0.0:9868
+2024-12-28 21:30:20,401 INFO org.eclipse.jetty.util.log: Logging initialized @2052ms to org.eclipse.jetty.util.log.Slf4jLog
+2024-12-28 21:30:20,486 WARN org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets. Reason: Could not read signature secret file: /home/ubuntu/hadoop-http-auth-signature-secret
+2024-12-28 21:30:20,493 INFO org.apache.hadoop.http.HttpRequestLog: Http request log for http.requests.secondary is not defined
+2024-12-28 21:30:20,497 INFO org.apache.hadoop.http.HttpServer2: Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2024-12-28 21:30:20,499 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context secondary
+2024-12-28 21:30:20,499 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2024-12-28 21:30:20,499 INFO org.apache.hadoop.http.HttpServer2: Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2024-12-28 21:30:20,501 INFO org.apache.hadoop.http.HttpServer2: Added filter AuthFilter (class=org.apache.hadoop.hdfs.web.AuthFilter) to context secondary
+2024-12-28 21:30:20,502 INFO org.apache.hadoop.http.HttpServer2: Added filter AuthFilter (class=org.apache.hadoop.hdfs.web.AuthFilter) to context logs
+2024-12-28 21:30:20,502 INFO org.apache.hadoop.http.HttpServer2: Added filter AuthFilter (class=org.apache.hadoop.hdfs.web.AuthFilter) to context static
+2024-12-28 21:30:20,527 INFO org.apache.hadoop.http.HttpServer2: Jetty bound to port 9868
+2024-12-28 21:30:20,528 INFO org.eclipse.jetty.server.Server: jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 11.0.25+9-post-Ubuntu-1ubuntu122.04
+2024-12-28 21:30:20,560 INFO org.eclipse.jetty.server.session: DefaultSessionIdManager workerName=node0
+2024-12-28 21:30:20,560 INFO org.eclipse.jetty.server.session: No SessionScavenger set, using defaults
+2024-12-28 21:30:20,561 INFO org.eclipse.jetty.server.session: node0 Scavenging every 600000ms
+2024-12-28 21:30:20,593 WARN org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets. Reason: Could not read signature secret file: /home/ubuntu/hadoop-http-auth-signature-secret
+2024-12-28 21:30:20,601 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.s.ServletContextHandler@5a6482a9{logs,/logs,file:///opt/hadoop/logs/,AVAILABLE}
+2024-12-28 21:30:20,601 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.s.ServletContextHandler@77b9d0c7{static,/static,file:///opt/hadoop/share/hadoop/hdfs/webapps/static/,AVAILABLE}
+2024-12-28 21:30:20,720 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.w.WebAppContext@8b91134{secondary,/,file:///opt/hadoop/share/hadoop/hdfs/webapps/secondary/,AVAILABLE}{file:/opt/hadoop/share/hadoop/hdfs/webapps/secondary}
+2024-12-28 21:30:20,731 INFO org.eclipse.jetty.server.AbstractConnector: Started ServerConnector@7baf6acf{HTTP/1.1, (http/1.1)}{0.0.0.0:9868}
+2024-12-28 21:30:20,731 INFO org.eclipse.jetty.server.Server: Started @2383ms
+2024-12-28 21:30:20,731 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Web server init done
+2024-12-28 21:31:21,346 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Image has changed. Downloading updated image from NN.
+2024-12-28 21:31:21,358 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Opening connection to http://localhost:9870/imagetransfer?getimage=1&txid=0&storageInfo=-66:1465875140:1735421094169:CID-3653ea9d-f148-43af-9ac5-76c9447cbd00&bootstrapstandby=false
+2024-12-28 21:31:21,615 INFO org.apache.hadoop.hdfs.server.common.Util: Combined time for file download and fsync to all disks took 0.02s. The file download took 0.02s at 0.00 KB/s. Synchronous (fsync) write to disk of /opt/hadoop/data/dfs/namesecondary/current/fsimage.ckpt_0000000000000000000 took 0.00s.
+2024-12-28 21:31:21,616 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Downloaded file fsimage.ckpt_0000000000000000000 size 401 bytes.
+2024-12-28 21:31:21,625 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Opening connection to http://localhost:9870/imagetransfer?getedit=1&startTxId=1&endTxId=2&storageInfo=-66:1465875140:1735421094169:CID-3653ea9d-f148-43af-9ac5-76c9447cbd00
+2024-12-28 21:31:21,637 INFO org.apache.hadoop.hdfs.server.common.Util: Combined time for file download and fsync to all disks took 0.00s. The file download took 0.00s at 0.00 KB/s. Synchronous (fsync) write to disk of /opt/hadoop/data/dfs/namesecondary/current/edits_tmp_0000000000000000001-0000000000000000002_0000000000005635177 took 0.00s.
+2024-12-28 21:31:21,637 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Downloaded file edits_tmp_0000000000000000001-0000000000000000002_0000000000005635177 size 0 bytes.
+2024-12-28 21:31:21,875 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Loading 1 INodes.
+2024-12-28 21:31:21,887 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Successfully loaded 1 inodes
+2024-12-28 21:31:21,897 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode: Completed update blocks map and name cache, total waiting duration 0ms.
+2024-12-28 21:31:21,905 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf: Loaded FSImage in 0 seconds.
+2024-12-28 21:31:21,906 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded image for txid 0 from /opt/hadoop/data/dfs/namesecondary/current/fsimage_0000000000000000000
+2024-12-28 21:31:21,906 INFO org.apache.hadoop.hdfs.server.namenode.NameCache: initialized with 0 entries 0 lookups
+2024-12-28 21:31:21,915 INFO org.apache.hadoop.hdfs.server.namenode.Checkpointer: Checkpointer about to load edits from 1 stream(s).
+2024-12-28 21:31:21,932 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Reading /opt/hadoop/data/dfs/namesecondary/current/edits_0000000000000000001-0000000000000000002 expecting start txid #1
+2024-12-28 21:31:21,932 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Start loading edits file /opt/hadoop/data/dfs/namesecondary/current/edits_0000000000000000001-0000000000000000002 maxTxnsToRead = 9223372036854775807
+2024-12-28 21:31:22,005 INFO org.apache.hadoop.hdfs.server.namenode.FSImage: Loaded 1 edits file(s) (the last named /opt/hadoop/data/dfs/namesecondary/current/edits_0000000000000000001-0000000000000000002) of total size 42.0, total edits 2.0, total load time 37.0 ms
+2024-12-28 21:31:22,047 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf: Saving image file /opt/hadoop/data/dfs/namesecondary/current/fsimage.ckpt_0000000000000000002 using no compression
+2024-12-28 21:31:22,090 INFO org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf: Image file /opt/hadoop/data/dfs/namesecondary/current/fsimage.ckpt_0000000000000000002 of size 401 bytes saved in 0 seconds .
+2024-12-28 21:31:22,093 INFO org.apache.hadoop.hdfs.server.namenode.FSImageTransactionalStorageInspector: No version file in /opt/hadoop/data/dfs/namesecondary
+2024-12-28 21:31:22,098 INFO org.apache.hadoop.hdfs.server.namenode.FSImageTransactionalStorageInspector: No version file in /opt/hadoop/data/dfs/namesecondary
+2024-12-28 21:31:22,135 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Image Transfer timeout configured to 60000 milliseconds
+2024-12-28 21:31:22,136 INFO org.apache.hadoop.hdfs.server.namenode.TransferFsImage: Sending fileName: /opt/hadoop/data/dfs/namesecondary/current/fsimage_0000000000000000002, fileSize: 401. Sent total: 401 bytes. Size of last segment intended to send: -1 bytes.
+2024-12-28 21:31:22,153 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 401
+2024-12-28 21:30:16,363 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.s.ServletContextHandler@677dbd89{static,/static,file:///opt/hadoop/share/hadoop/hdfs/webapps/static/,AVAILABLE}
+2024-12-28 21:30:16,563 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.w.WebAppContext@1761de10{datanode,/,file:///opt/hadoop/share/hadoop/hdfs/webapps/datanode/,AVAILABLE}{file:/opt/hadoop/share/hadoop/hdfs/webapps/datanode}
+2024-12-28 21:30:16,570 INFO org.eclipse.jetty.server.AbstractConnector: Started ServerConnector@3113a37{HTTP/1.1, (http/1.1)}{localhost:41349}
+2024-12-28 21:30:16,570 INFO org.eclipse.jetty.server.Server: Started @2986ms
+2024-12-28 21:30:16,637 WARN org.apache.hadoop.hdfs.server.datanode.web.DatanodeHttpServer: Got null for restCsrfPreventionFilter - will not do any filtering.
+2024-12-28 21:30:16,718 INFO org.apache.hadoop.hdfs.server.datanode.web.DatanodeHttpServer: Listening HTTP traffic on /0.0.0.0:9864
+2024-12-28 21:30:16,729 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: dnUserName = ubuntu
+2024-12-28 21:30:16,729 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: supergroup = supergroup
+2024-12-28 21:30:16,736 INFO org.apache.hadoop.util.JvmPauseMonitor: Starting JVM pause monitor
+2024-12-28 21:30:16,771 INFO org.apache.hadoop.ipc.CallQueueManager: Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 1000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false.
+2024-12-28 21:30:16,790 INFO org.apache.hadoop.ipc.Server: Listener at 0.0.0.0:9867
+2024-12-28 21:30:16,792 INFO org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 9867
+2024-12-28 21:30:17,026 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Opened IPC server at /0.0.0.0:9867
+2024-12-28 21:30:17,094 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Refresh request received for nameservices: null
+2024-12-28 21:30:17,133 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Starting BPOfferServices for nameservices: <default>
+2024-12-28 21:30:17,168 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Block pool <registering> (Datanode Uuid unassigned) service to localhost/127.0.0.1:9000 starting to offer service
+2024-12-28 21:30:17,193 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2024-12-28 21:30:17,194 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 9867: starting
+2024-12-28 21:30:17,642 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Acknowledging ACTIVE Namenode during handshakeBlock pool <registering> (Datanode Uuid unassigned) service to localhost/127.0.0.1:9000
+2024-12-28 21:30:17,645 INFO org.apache.hadoop.hdfs.server.common.Storage: Using 1 threads to upgrade data directories (dfs.datanode.parallel.volumes.load.threads.num=1, dataDirs=1)
+2024-12-28 21:30:17,655 INFO org.apache.hadoop.hdfs.server.common.Storage: Lock on /opt/hadoop/data/datanode/in_use.lock acquired by nodename 103258@devin-box
+2024-12-28 21:30:17,660 WARN org.apache.hadoop.hdfs.server.common.Storage: Failed to add storage directory [DISK]file:/opt/hadoop/data/datanode
+java.io.IOException: Incompatible clusterIDs in /opt/hadoop/data/datanode: namenode clusterID = CID-3653ea9d-f148-43af-9ac5-76c9447cbd00; datanode clusterID = CID-2229d2fa-a78c-443b-807f-220a145f911e
+	at org.apache.hadoop.hdfs.server.datanode.DataStorage.doTransition(DataStorage.java:746)
+	at org.apache.hadoop.hdfs.server.datanode.DataStorage.loadStorageDirectory(DataStorage.java:296)
+	at org.apache.hadoop.hdfs.server.datanode.DataStorage.loadDataStorage(DataStorage.java:409)
+	at org.apache.hadoop.hdfs.server.datanode.DataStorage.addStorageLocations(DataStorage.java:389)
+	at org.apache.hadoop.hdfs.server.datanode.DataStorage.recoverTransitionRead(DataStorage.java:561)
+	at org.apache.hadoop.hdfs.server.datanode.DataNode.initStorage(DataNode.java:2059)
+	at org.apache.hadoop.hdfs.server.datanode.DataNode.initBlockPool(DataNode.java:1995)
+	at org.apache.hadoop.hdfs.server.datanode.BPOfferService.verifyAndSetNamespaceInfo(BPOfferService.java:394)
+	at org.apache.hadoop.hdfs.server.datanode.BPServiceActor.connectToNNAndHandshake(BPServiceActor.java:312)
+	at org.apache.hadoop.hdfs.server.datanode.BPServiceActor.run(BPServiceActor.java:891)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2024-12-28 21:30:17,662 ERROR org.apache.hadoop.hdfs.server.datanode.DataNode: Initialization failed for Block pool <registering> (Datanode Uuid f3a790e2-3b2f-42da-930c-ba9d932cc79f) service to localhost/127.0.0.1:9000. Exiting. 
+java.io.IOException: All specified directories have failed to load.
+	at org.apache.hadoop.hdfs.server.datanode.DataStorage.recoverTransitionRead(DataStorage.java:562)
+	at org.apache.hadoop.hdfs.server.datanode.DataNode.initStorage(DataNode.java:2059)
+	at org.apache.hadoop.hdfs.server.datanode.DataNode.initBlockPool(DataNode.java:1995)
+	at org.apache.hadoop.hdfs.server.datanode.BPOfferService.verifyAndSetNamespaceInfo(BPOfferService.java:394)
+	at org.apache.hadoop.hdfs.server.datanode.BPServiceActor.connectToNNAndHandshake(BPServiceActor.java:312)
+	at org.apache.hadoop.hdfs.server.datanode.BPServiceActor.run(BPServiceActor.java:891)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2024-12-28 21:30:17,662 WARN org.apache.hadoop.hdfs.server.datanode.DataNode: Ending block pool service for: Block pool <registering> (Datanode Uuid f3a790e2-3b2f-42da-930c-ba9d932cc79f) service to localhost/127.0.0.1:9000
+2024-12-28 21:30:17,670 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Removed Block pool <registering> (Datanode Uuid f3a790e2-3b2f-42da-930c-ba9d932cc79f)
+2024-12-28 21:30:19,670 WARN org.apache.hadoop.hdfs.server.datanode.DataNode: Exiting Datanode
+2024-12-28 21:30:19,681 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down DataNode at devin-box/172.16.7.2
+************************************************************/
+5. Process Status:
+ubuntu    103156  4.2  4.2 3934472 346608 ?      Sl   21:30   0:08 /usr/lib/jvm/java-11-openjdk-amd64/bin/java -Dproc_namenode -Djava.net.preferIPv4Stack=true -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dyarn.log.dir=/opt/hadoop/logs -Dyarn.log.file=hadoop-ubuntu-namenode-devin-box.log -Dyarn.home.dir=/opt/hadoop -Dyarn.root.logger=INFO,console -Djava.library.path=/opt/hadoop/lib/native -Dhadoop.log.dir=/opt/hadoop/logs -Dhadoop.log.file=hadoop-ubuntu-namenode-devin-box.log -Dhadoop.home.dir=/opt/hadoop -Dhadoop.id.str=ubuntu -Dhadoop.root.logger=INFO,RFA -Dhadoop.policy.file=hadoop-policy.xml org.apache.hadoop.hdfs.server.namenode.NameNode
+ubuntu    103488  2.8  3.0 3899320 251452 ?      Sl   21:30   0:05 /usr/lib/jvm/java-11-openjdk-amd64/bin/java -Dproc_secondarynamenode -Djava.net.preferIPv4Stack=true -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dyarn.log.dir=/opt/hadoop/logs -Dyarn.log.file=hadoop-ubuntu-secondarynamenode-devin-box.log -Dyarn.home.dir=/opt/hadoop -Dyarn.root.logger=INFO,console -Djava.library.path=/opt/hadoop/lib/native -Dhadoop.log.dir=/opt/hadoop/logs -Dhadoop.log.file=hadoop-ubuntu-secondarynamenode-devin-box.log -Dhadoop.home.dir=/opt/hadoop -Dhadoop.id.str=ubuntu -Dhadoop.root.logger=INFO,RFA -Dhadoop.policy.file=hadoop-policy.xml org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
+ubuntu    108918  0.0  0.0   3608  1716 pts/1    SN+  21:33   0:00 grep --color=auto -E NameNode|DataNode|SecondaryNameNode

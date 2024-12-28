@@ -1,0 +1,12 @@
+Starting Kafka Service
+===================
+1. Verifying Kafka files:
+-rwxrwxr-x 1 ubuntu ubuntu 1376 Jul 14  2023 kafka/bin/kafka-server-start.sh
+-rw-rw-r-- 1 ubuntu ubuntu  222 Dec 28 21:44 kafka/config/server.properties
+\n2. Starting Kafka broker:
+\n3. Verifying Kafka process:
+124150 Kafka
+\n4. Testing Kafka topic creation:
+Error while executing topic command : Topic 'test' already exists.
+[2024-12-28 21:48:25,032] ERROR org.apache.kafka.common.errors.TopicExistsException: Topic 'test' already exists.
+ (kafka.admin.TopicCommand$)

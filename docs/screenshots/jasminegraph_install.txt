@@ -1,0 +1,145 @@
+=== Installing JasmineGraph Dependencies ===
+1. Installing system dependencies:
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 110985 (apt-get)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+2. Building JasmineGraph:
+Consolidate compiler generated dependencies of target JasmineGraphLib
+[  3%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/backend/JasmineGraphBackend.cpp.o
+[  6%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/backend/JasmineGraphBackendProtocol.cpp.o
+[ 10%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/centralstore/JasmineGraphHashMapCentralStore.cpp.o
+[ 13%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/centralstore/JasmineGraphHashMapDuplicateCentralStore.cpp.o
+[ 17%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/exception/JasmineGraphException.cpp.o
+[ 20%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/frontend/JasmineGraphFrontEnd.cpp.o
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1243:2: error: #else without #if
+ 1243 | #else
+      |  ^~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1250:2: error: #endif without #if
+ 1250 | #endif
+      |  ^~~~~
+[ 24%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/frontend/JasmineGraphFrontEndProtocol.cpp.o
+[ 27%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/frontend/core/CoreConstants.cpp.o
+[ 31%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/frontend/core/domain/JobRequest.cpp.o
+[ 34%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/frontend/core/domain/JobResponse.cpp.o
+[ 37%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/localstore/JasmineGraphHashMapLocalStore.cpp.o
+[ 41%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/localstore/JasmineGraphLocalStore.cpp.o
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp: In function 'void* frontendservicesesion(void*)':
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:175:18: error: 'workerClientsInitialized' was not declared in this scope
+  175 |             if (!workerClientsInitialized) {
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:176:17: error: 'workerClients' was not declared in this scope; did you mean 'getWorkerClients'?
+  176 |                 workerClients = getWorkerClients(sqlite);
+      |                 ^~~~~~~~~~~~~
+      |                 getWorkerClients
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:179:46: error: 'kafka_server_IP' was not declared in this scope
+  179 |             add_stream_kafka_command(connFd, kafka_server_IP, configs, kstream, input_stream_handler, workerClients,
+      |                                              ^~~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:179:63: error: 'configs' was not declared in this scope
+  179 |             add_stream_kafka_command(connFd, kafka_server_IP, configs, kstream, input_stream_handler, workerClients,
+      |                                                               ^~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:179:72: error: 'kstream' was not declared in this scope
+  179 |             add_stream_kafka_command(connFd, kafka_server_IP, configs, kstream, input_stream_handler, workerClients,
+      |                                                                        ^~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:179:81: error: 'input_stream_handler' was not declared in this scope
+  179 |             add_stream_kafka_command(connFd, kafka_server_IP, configs, kstream, input_stream_handler, workerClients,
+      |                                                                                 ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:179:103: error: 'workerClients' was not declared in this scope; did you mean 'getWorkerClients'?
+  179 |             add_stream_kafka_command(connFd, kafka_server_IP, configs, kstream, input_stream_handler, workerClients,
+      |                                                                                                       ^~~~~~~~~~~~~
+      |                                                                                                       getWorkerClients
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:179:13: error: 'add_stream_kafka_command' was not declared in this scope
+  179 |             add_stream_kafka_command(connFd, kafka_server_IP, configs, kstream, input_stream_handler, workerClients,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:182:47: error: 'kstream' was not declared in this scope
+  182 |             stop_stream_kafka_command(connFd, kstream, &loop_exit);
+      |                                               ^~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:182:13: error: 'stop_stream_kafka_command' was not declared in this scope; did you mean 'stop_strian_command'?
+  182 |             stop_stream_kafka_command(connFd, kstream, &loop_exit);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |             stop_strian_command
+[ 44%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/localstore/JasmineGraphLocalStoreFactory.cpp.o
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:227:9: error: 'input_stream_handler' was not declared in this scope
+  227 |     if (input_stream_handler.joinable()) {
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp: At global scope:
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1116:80: error: 'cppkafka' has not been declared
+ 1116 | static void add_stream_kafka_command(int connFd, std::string &kafka_server_IP, cppkafka::Configuration &configs,
+      |                                                                                ^~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1116:104: error: expected ',' or '...' before '&' token
+ 1116 | static void add_stream_kafka_command(int connFd, std::string &kafka_server_IP, cppkafka::Configuration &configs,
+      |                                                                                                        ^
+[ 48%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/metadb/SQLiteDBInterface.cpp.o
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp: In function 'void add_stream_kafka_command(int, std::string&, int)':
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1124:10: error: 'loop_exit_p' was not declared in this scope
+ 1124 |         *loop_exit_p = true;
+      |          ^~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1130:10: error: 'loop_exit_p' was not declared in this scope
+ 1130 |         *loop_exit_p = true;
+      |          ^~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1147:9: error: 'configs' was not declared in this scope
+ 1147 |         configs = {{"metadata.broker.list", kafka_server_IP}, {"group.id", group_id}};
+      |         ^~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1155:14: error: 'loop_exit_p' was not declared in this scope
+ 1155 |             *loop_exit_p = true;
+      |              ^~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1161:14: error: 'loop_exit_p' was not declared in this scope
+ 1161 |             *loop_exit_p = true;
+      |              ^~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1188:9: error: 'configs' was not declared in this scope
+ 1188 |         configs = {{"metadata.broker.list", kafka_server_IP}, {"group.id", "knnect"}};
+      |         ^~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1196:10: error: 'loop_exit_p' was not declared in this scope
+ 1196 |         *loop_exit_p = true;
+      |          ^~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1202:10: error: 'loop_exit_p' was not declared in this scope
+ 1202 |         *loop_exit_p = true;
+      |          ^~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1216:10: error: 'loop_exit_p' was not declared in this scope
+ 1216 |         *loop_exit_p = true;
+      |          ^~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1220:5: error: 'kstream' was not declared in this scope
+ 1220 |     kstream = new KafkaConnector(configs);
+      |     ^~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1220:19: error: expected type-specifier before 'KafkaConnector'
+ 1220 |     kstream = new KafkaConnector(configs);
+      |                   ^~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1222:34: error: 'numberOfPartitions' was not declared in this scope
+ 1222 |     Partitioner graphPartitioner(numberOfPartitions, 0, spt::Algorithms::FENNEL, sqlite);
+      |                                  ^~~~~~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1222:82: error: 'sqlite' was not declared in this scope; did you mean 'sqlite3'?
+ 1222 |     Partitioner graphPartitioner(numberOfPartitions, 0, spt::Algorithms::FENNEL, sqlite);
+      |                                                                                  ^~~~~~
+      |                                                                                  sqlite3
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1224:19: error: expected type-specifier before 'KafkaConnector'
+ 1224 |     kstream = new KafkaConnector(configs);
+      |                   ^~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1228:5: error: 'StreamHandler' was not declared in this scope
+ 1228 |     StreamHandler *stream_handler = new StreamHandler(kstream, numberOfPartitions, workerClients, sqlite);
+      |     ^~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1228:20: error: 'stream_handler' was not declared in this scope
+ 1228 |     StreamHandler *stream_handler = new StreamHandler(kstream, numberOfPartitions, workerClients, sqlite);
+      |                    ^~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1228:41: error: expected type-specifier before 'StreamHandler'
+ 1228 |     StreamHandler *stream_handler = new StreamHandler(kstream, numberOfPartitions, workerClients, sqlite);
+      |                                         ^~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1241:5: error: 'input_stream_handler_thread' was not declared in this scope
+ 1241 |     input_stream_handler_thread = thread(&StreamHandler::listen_to_kafka_topic, stream_handler);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp: At global scope:
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1271:5: error: expected unqualified-id before 'if'
+ 1271 |     if (result_wr < 0) {
+      |     ^~
+/home/ubuntu/Jasmine/jasminegraph/src/frontend/JasmineGraphFrontEnd.cpp:1275:1: error: expected declaration before '}' token
+ 1275 | }
+      | ^
+[ 51%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/partitioner/local/MetisPartitioner.cpp.o
+[ 55%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/performance/metrics/PerformanceUtil.cpp.o
+[ 58%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/performance/metrics/StatisticCollector.cpp.o
+/home/ubuntu/Jasmine/jasminegraph/src/partitioner/local/MetisPartitioner.cpp: In member function 'std::vector<std::map<int, std::__cxx11::basic_string<char> > > MetisPartitioner::partitioneWithGPMetis(std::string)':
+/home/ubuntu/Jasmine/jasminegraph/src/partitioner/local/MetisPartitioner.cpp:304:1: warning: control reaches end of non-void function [-Wreturn-type]
+  304 | }
+      | ^
+[ 62%] Building CXX object CMakeFiles/JasmineGraphLib.dir/src/performancedb/PerformanceSQLiteDBInterface.cpp.o
+make[2]: *** [CMakeFiles/JasmineGraphLib.dir/build.make:146: CMakeFiles/JasmineGraphLib.dir/src/frontend/JasmineGraphFrontEnd.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:85: CMakeFiles/JasmineGraphLib.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2

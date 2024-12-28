@@ -1,0 +1,19 @@
+=== Setting up SSH for Hadoop ===
+1. Checking SSH installation:
+/usr/bin/ssh
+2. Setting up SSH keys:
+3. Testing SSH localhost:
+SSH test successful
+4. Restarting Hadoop services:
+Stopping namenodes on [localhost]
+Stopping datanodes
+Stopping secondary namenodes [devin-box]
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [devin-box]
+5. Verifying HDFS services:
+154355 Jps
+154196 SecondaryNameNode
+124150 Kafka
+61913 QuorumPeerMain
+150687 NameNode

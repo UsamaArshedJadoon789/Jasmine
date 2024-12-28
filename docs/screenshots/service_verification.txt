@@ -1,0 +1,80 @@
+Verifying Services and Configurations
+================================
+1. Checking Java processes:
+112721 NameNode
+88416 TaskManagerRunner
+113111 SecondaryNameNode
+124150 Kafka
+74057 Master
+61913 QuorumPeerMain
+97723 TaskManagerRunner
+125146 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+107500 TaskManagerRunner
+127471 Jps
+63934 TaskManagerRunner
+2. Checking Kafka logs:
+total 224
+-rw-rw-r-- 1 ubuntu ubuntu      0 Dec 28 21:47 cleaner-offset-checkpoint
+-rw-rw-r-- 1 ubuntu ubuntu   5999 Dec 28 21:47 controller.log
+-rw-rw-r-- 1 ubuntu ubuntu      0 Dec 28 21:45 kafka-authorizer.log
+-rw-rw-r-- 1 ubuntu ubuntu      0 Dec 28 21:45 kafka-request.log
+-rw-rw-r-- 1 ubuntu ubuntu   5592 Dec 28 21:48 kafkaServer-gc.log
+-rw-rw-r-- 1 ubuntu ubuntu   9669 Dec 28 21:47 kafkaServer-gc.log.0
+-rw-rw-r-- 1 ubuntu ubuntu  27340 Dec 28 21:48 kafkaServer.out
+-rw-rw-r-- 1 ubuntu ubuntu     79 Dec 28 21:47 log-cleaner.log
+-rw-rw-r-- 1 ubuntu ubuntu      4 Dec 28 21:48 log-start-offset-checkpoint
+-rw-rw-r-- 1 ubuntu ubuntu     88 Dec 28 21:47 meta.properties
+-rw-rw-r-- 1 ubuntu ubuntu     13 Dec 28 21:48 recovery-point-offset-checkpoint
+-rw-rw-r-- 1 ubuntu ubuntu     13 Dec 28 21:48 replication-offset-checkpoint
+-rw-rw-r-- 1 ubuntu ubuntu 110472 Dec 28 21:48 server.log
+-rw-rw-r-- 1 ubuntu ubuntu   1500 Dec 28 21:47 state-change.log
+drwxrwxr-x 2 ubuntu ubuntu   4096 Dec 28 21:47 test-0
+-rw-rw-r-- 1 ubuntu ubuntu   1017 Dec 28 21:47 zookeeper-gc.log
+-rw-rw-r-- 1 ubuntu ubuntu   1017 Dec 28 21:45 zookeeper-gc.log.0
+-rw-rw-r-- 1 ubuntu ubuntu   1017 Dec 28 21:47 zookeeper-gc.log.1
+-rw-rw-r-- 1 ubuntu ubuntu  17953 Dec 28 21:47 zookeeper.out
+3. Last 20 lines of Kafka logs:
+[2024-12-28 21:48:19,817] INFO [ThrottledChannelReaper-ControllerMutation]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2024-12-28 21:48:19,817] INFO [ThrottledChannelReaper-ControllerMutation]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2024-12-28 21:48:19,819] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics)
+[2024-12-28 21:48:19,819] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics)
+[2024-12-28 21:48:19,825] INFO Broker and topic stats closed (kafka.server.BrokerTopicStats)
+[2024-12-28 21:48:19,829] INFO App info kafka.server for 0 unregistered (org.apache.kafka.common.utils.AppInfoParser)
+[2024-12-28 21:48:19,830] INFO [KafkaServer id=0] shut down completed (kafka.server.KafkaServer)
+[2024-12-28 21:48:19,830] ERROR Exiting Kafka due to fatal exception during startup. (kafka.Kafka$)
+org.apache.kafka.common.KafkaException: Failed to acquire lock on file .lock in /home/ubuntu/Jasmine/kafka/logs. A Kafka instance in another process or thread is using this directory.
+	at kafka.log.LogManager.$anonfun$lockLogDirs$1(LogManager.scala:249)
+	at scala.collection.StrictOptimizedIterableOps.flatMap(StrictOptimizedIterableOps.scala:118)
+	at scala.collection.StrictOptimizedIterableOps.flatMap$(StrictOptimizedIterableOps.scala:105)
+	at scala.collection.mutable.ArraySeq.flatMap(ArraySeq.scala:37)
+	at kafka.log.LogManager.lockLogDirs(LogManager.scala:244)
+	at kafka.log.LogManager.<init>(LogManager.scala:120)
+	at kafka.log.LogManager$.apply(LogManager.scala:1400)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:279)
+	at kafka.Kafka$.main(Kafka.scala:113)
+	at kafka.Kafka.main(Kafka.scala)
+[2024-12-28 21:48:19,836] INFO [KafkaServer id=0] shutting down (kafka.server.KafkaServer)
+4. Checking ZooKeeper logs:
+[2024-12-28 21:47:59,916] INFO Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory (org.apache.zookeeper.server.ServerCnxnFactory)
+[2024-12-28 21:47:59,916] WARN maxCnxns is not configured, using default value 0. (org.apache.zookeeper.server.ServerCnxnFactory)
+[2024-12-28 21:47:59,918] INFO Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 4 worker threads, and 64 kB direct buffers. (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2024-12-28 21:47:59,922] INFO binding to port 0.0.0.0/0.0.0.0:2181 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2024-12-28 21:47:59,923] ERROR Unexpected exception, exiting abnormally (org.apache.zookeeper.server.ZooKeeperServerMain)
+java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:459)
+	at java.base/sun.nio.ch.Net.bind(Net.java:448)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:73)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:676)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:158)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:112)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.main(ZooKeeperServerMain.java:67)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:140)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:90)
+[2024-12-28 21:47:59,926] INFO ZooKeeper audit is disabled. (org.apache.zookeeper.audit.ZKAuditProvider)
+[2024-12-28 21:47:59,927] ERROR Exiting JVM with code 1 (org.apache.zookeeper.util.ServiceUtils)
+5. Creating Kafka config backup:
+6. Updating Kafka configuration:

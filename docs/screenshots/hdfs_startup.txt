@@ -1,0 +1,66 @@
+Starting HDFS Services
+===================
+Starting namenodes on [localhost]
+Starting datanodes
+localhost: datanode is running as process 73120.  Stop it first and ensure /tmp/hadoop-ubuntu-datanode.pid file is empty before retry.
+Starting secondary namenodes [devin-box]
+devin-box: secondarynamenode is running as process 73290.  Stop it first and ensure /tmp/hadoop-ubuntu-secondarynamenode.pid file is empty before retry.
+Checking Java Processes:
+94737 Jps
+88416 TaskManagerRunner
+73120 DataNode
+51383 NameNode
+74057 Master
+61913 QuorumPeerMain
+73290 SecondaryNameNode
+63643 StandaloneSessionClusterEntrypoint
+87277 Kafka
+63934 TaskManagerRunner
+Checking HDFS Status:
+Configured Capacity: 134145380352 (124.93 GB)
+Present Capacity: 113918717952 (106.10 GB)
+DFS Remaining: 113918672896 (106.10 GB)
+DFS Used: 45056 (44 KB)
+DFS Used%: 0.00%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 127.0.0.1:9866 (localhost)
+Hostname: devin-box
+Decommission Status : Normal
+Configured Capacity: 134145380352 (124.93 GB)
+DFS Used: 45056 (44 KB)
+Non DFS Used: 13337939968 (12.42 GB)
+DFS Remaining: 113918672896 (106.10 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 84.92%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Sat Dec 28 21:26:48 UTC 2024
+Last Block Report: Sat Dec 28 21:21:12 UTC 2024
+Num of Blocks: 1
+
+
+Creating Test Directory:
+Found 2 items
+drwxr-xr-x   - ubuntu supergroup          0 2024-12-28 21:23 /test
+drwxr-xr-x   - ubuntu supergroup          0 2024-12-28 20:52 /user
+Installing Kafka:

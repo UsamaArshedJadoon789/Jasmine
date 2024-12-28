@@ -1,0 +1,31 @@
+HDFS Status Check
+================
+1. Checking HDFS directory permissions:
+total 20
+drwxr-xr-x  5 ubuntu ubuntu 4096 Dec 28 20:56 .
+drwxr-xr-x 12 ubuntu ubuntu 4096 Dec 28 20:52 ..
+drwx------  3 ubuntu ubuntu 4096 Dec 28 20:56 datanode
+drwxrwxr-x  3 ubuntu ubuntu 4096 Dec 28 20:56 dfs
+drwxr-xr-x  3 ubuntu ubuntu 4096 Dec 28 20:56 namenode
+2. Checking Java version:
+openjdk version "11.0.25" 2024-10-15
+OpenJDK Runtime Environment (build 11.0.25+9-post-Ubuntu-1ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.25+9-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+3. Checking HADOOP_HOME:
+/opt/hadoop
+4. Starting HDFS (if not running):
+Starting namenodes on [localhost]
+Starting datanodes
+localhost: datanode is running as process 73120.  Stop it first and ensure /tmp/hadoop-ubuntu-datanode.pid file is empty before retry.
+Starting secondary namenodes [devin-box]
+devin-box: secondarynamenode is running as process 73290.  Stop it first and ensure /tmp/hadoop-ubuntu-secondarynamenode.pid file is empty before retry.
+88416 TaskManagerRunner
+73120 DataNode
+51383 NameNode
+91353 Jps
+74057 Master
+61913 QuorumPeerMain
+73290 SecondaryNameNode
+63643 StandaloneSessionClusterEntrypoint
+87277 Kafka
+63934 TaskManagerRunner

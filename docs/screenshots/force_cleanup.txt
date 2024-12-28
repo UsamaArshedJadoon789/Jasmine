@@ -1,0 +1,33 @@
+Force Cleanup and Restart
+======================
+1. Current Java Processes:
+88416 TaskManagerRunner
+102199 SecondaryNameNode
+51383 NameNode
+74057 Master
+61913 QuorumPeerMain
+97723 TaskManagerRunner
+102986 Jps
+101946 DataNode
+63643 StandaloneSessionClusterEntrypoint
+87277 Kafka
+63934 TaskManagerRunner
+2. Killing Hadoop Processes:
+3. Cleaning PID files:
+4. Verifying SSH:
+SSH test successful
+5. Starting HDFS:
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [devin-box]
+6. Verifying Services:
+103488 SecondaryNameNode
+88416 TaskManagerRunner
+103748 Jps
+103156 NameNode
+74057 Master
+61913 QuorumPeerMain
+97723 TaskManagerRunner
+63643 StandaloneSessionClusterEntrypoint
+87277 Kafka
+63934 TaskManagerRunner
