@@ -79,8 +79,3 @@
 # Options for beeline
 # - SPARK_BEELINE_OPTS, to set config properties only for the beeline cli (e.g. "-Dx=y")
 # - SPARK_BEELINE_MEMORY, Memory for beeline (e.g. 1000M, 2G) (Default: 1G)
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-export SPARK_MASTER_HOST=localhost
-export HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop
-export SPARK_WORKER_CORES=2
-export SPARK_WORKER_MEMORY=2g

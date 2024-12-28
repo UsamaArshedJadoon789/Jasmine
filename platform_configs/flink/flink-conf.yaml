@@ -1,0 +1,10 @@
+jobmanager.rpc.address: localhost
+jobmanager.memory.process.size: 1600m
+taskmanager.memory.process.size: 1728m
+taskmanager.numberOfTaskSlots: 2
+parallelism.default: 2
+state.backend: filesystem
+state.checkpoints.dir: file:///home/ubuntu/Jasmine/flink/checkpoints
+jobmanager.rpc.address: localhost
+taskmanager.numberOfTaskSlots: 2
+taskmanager.memory.process.size: 2048m
