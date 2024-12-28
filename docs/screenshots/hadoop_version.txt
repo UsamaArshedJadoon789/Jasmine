@@ -4,4 +4,4 @@ Compiled by ubuntu on 2023-06-18T08:22Z
 Compiled on platform linux-x86_64
 Compiled with protoc 3.7.1
 From source with checksum 5652179ad55f76cb287d9c633bb53bbd
-This command was run using /home/ubuntu/Jasmine/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar
+This command was run using /opt/hadoop/share/hadoop/common/hadoop-common-3.3.6.jar

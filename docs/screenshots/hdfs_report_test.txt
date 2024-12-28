@@ -1,0 +1,42 @@
+Configured Capacity: 134145380352 (124.93 GB)
+Present Capacity: 115004207126 (107.11 GB)
+DFS Remaining: 115004182528 (107.11 GB)
+DFS Used: 24598 (24.02 KB)
+DFS Used%: 0.00%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 127.0.0.1:9866 (localhost)
+Hostname: devin-box
+Decommission Status : Normal
+Configured Capacity: 134145380352 (124.93 GB)
+DFS Used: 24598 (24.02 KB)
+Non DFS Used: 12252450794 (11.41 GB)
+DFS Remaining: 115004182528 (107.11 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 85.73%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Sat Dec 28 20:57:12 UTC 2024
+Last Block Report: Sat Dec 28 20:56:30 UTC 2024
+Num of Blocks: 1
+
+

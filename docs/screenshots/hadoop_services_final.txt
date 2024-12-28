@@ -1,0 +1,4 @@
+60054 Jps
+51383 NameNode
+59834 SecondaryNameNode
+59564 DataNode
